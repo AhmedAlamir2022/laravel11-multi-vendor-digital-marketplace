@@ -19,7 +19,7 @@
                 </a>
             </li>
             <li class="sidebar-list__item">
-                <a href="" class="sidebar-list__link">
+                <a href="{{ route('profile') }}" class="sidebar-list__link">
                     <span class="sidebar-list__icon">
                         <i class="ti ti-user"></i>
                     </span>

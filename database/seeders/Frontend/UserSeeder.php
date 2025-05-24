@@ -22,8 +22,8 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'Author',
             'email' => 'author@gmail.com',
-            // 'user_type' => 'author',
-            // 'kyc_status' => 1,
+            'user_type' => 'author',
+            'kyc_status' => 1,
             'password' => bcrypt('password'),
         ]);
     }

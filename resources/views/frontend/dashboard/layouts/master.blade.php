@@ -207,7 +207,7 @@
                                     </button>
                                     <ul class="user-profile-dropdown">
                                         <li class="sidebar-list__item">
-                                            <a href="dashboard-profile.html" class="sidebar-list__link">
+                                            <a href="{{ route('profile') }}" class="sidebar-list__link">
                                                 <span class="sidebar-list__icon">
                                                     <img src="{{ asset('assets/frontend/images/icons/sidebar-icon2.svg') }}"
                                                         alt="" class="icon">
