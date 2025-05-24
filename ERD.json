@@ -1,0 +1,2442 @@
+{
+  "id": "0",
+  "name": "Digital Market Place ERD",
+  "createdAt": "2024-12-26T10:43:09.889Z",
+  "updatedAt": "2024-12-26T10:43:09.889Z",
+  "databaseType": "mysql",
+  "tables": [
+    {
+      "id": "1",
+      "name": "kyc_verifications",
+      "x": -735.7089014355062,
+      "y": -247.76985711512322,
+      "fields": [
+        {
+          "id": "2",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734348362358
+        },
+        {
+          "id": "3",
+          "name": "user_id",
+          "type": {
+            "name": "bigint",
+            "id": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734348386335
+        },
+        {
+          "id": "4",
+          "name": "document_type",
+          "type": {
+            "name": "enum",
+            "id": "enum"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734348418062
+        },
+        {
+          "id": "5",
+          "name": "document_number",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734348438931
+        },
+        {
+          "id": "6",
+          "name": "documents",
+          "type": {
+            "name": "json",
+            "id": "json"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734348456268
+        },
+        {
+          "id": "7",
+          "name": "status",
+          "type": {
+            "name": "enum",
+            "id": "enum"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734348470809
+        },
+        {
+          "id": "8",
+          "name": "rejection_reason",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734348488784
+        }
+      ],
+      "indexes": [],
+      "color": "#8eb7ff",
+      "createdAt": 1734348362358,
+      "isView": false,
+      "order": 19,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "9",
+      "name": "purchase_items",
+      "x": -1077.5208561155425,
+      "y": 609.8178154899126,
+      "fields": [
+        {
+          "id": "10",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734343761487
+        },
+        {
+          "id": "11",
+          "name": "purchase_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734343890763
+        },
+        {
+          "id": "12",
+          "name": "author_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734345142376
+        },
+        {
+          "id": "13",
+          "name": "item_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734343781804
+        },
+        {
+          "id": "14",
+          "name": "price",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734343811421
+        },
+        {
+          "id": "15",
+          "name": "quantity",
+          "type": {
+            "name": "int",
+            "id": "int"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734343827696
+        },
+        {
+          "id": "16",
+          "name": "total",
+          "type": {
+            "name": "double",
+            "id": "double"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734343835505
+        }
+      ],
+      "indexes": [],
+      "color": "#c05dcf",
+      "createdAt": 1734343761487,
+      "isView": false,
+      "order": 15,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "17",
+      "name": "item_reviews",
+      "x": -63.68847286396152,
+      "y": 547.7638819569011,
+      "fields": [
+        {
+          "id": "18",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734331538237
+        },
+        {
+          "id": "19",
+          "name": "user_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734331557756
+        },
+        {
+          "id": "20",
+          "name": "author_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734331562984
+        },
+        {
+          "id": "21",
+          "name": "item_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734331567324
+        },
+        {
+          "id": "22",
+          "name": "stars",
+          "type": {
+            "name": "int",
+            "id": "int"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734331571666
+        },
+        {
+          "id": "23",
+          "name": "body",
+          "type": {
+            "name": "text",
+            "id": "text"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734331592474
+        }
+      ],
+      "indexes": [],
+      "color": "#42e0c0",
+      "createdAt": 1734331538237,
+      "isView": false,
+      "order": 7,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "24",
+      "name": "withdrawals",
+      "x": 547.582932398525,
+      "y": 527.1999965132449,
+      "fields": [
+        {
+          "id": "25",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734347409773
+        },
+        {
+          "id": "26",
+          "name": "author_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734347524463
+        },
+        {
+          "id": "27",
+          "name": "amount",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734347539401
+        },
+        {
+          "id": "28",
+          "name": "method",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734347546349
+        },
+        {
+          "id": "29",
+          "name": "account",
+          "type": {
+            "name": "tinytext",
+            "id": "tinytext"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734347571517
+        },
+        {
+          "id": "30",
+          "name": "status",
+          "type": {
+            "name": "enum",
+            "id": "enum"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734347606939
+        }
+      ],
+      "indexes": [],
+      "color": "#ff6363",
+      "createdAt": 1734347409773,
+      "isView": false,
+      "order": 18,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "31",
+      "name": "transactions",
+      "x": -1070.2879046425342,
+      "y": 912.1803810507113,
+      "fields": [
+        {
+          "id": "32",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734342203641
+        },
+        {
+          "id": "33",
+          "name": "user_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734342231304
+        },
+        {
+          "id": "34",
+          "name": "amount",
+          "type": {
+            "name": "double",
+            "id": "double"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734342237349
+        },
+        {
+          "id": "35",
+          "name": "paid_amount",
+          "type": {
+            "name": "double",
+            "id": "double"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734342246704
+        },
+        {
+          "id": "36",
+          "name": "paid_in_amount",
+          "type": {
+            "name": "double",
+            "id": "double"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734342461389
+        },
+        {
+          "id": "37",
+          "name": "paid_in_currency_icon",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734342686791
+        },
+        {
+          "id": "38",
+          "name": "payment_gateway",
+          "type": {
+            "name": "enum",
+            "id": "enum"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734342265877
+        },
+        {
+          "id": "39",
+          "name": "exchange_rate",
+          "type": {
+            "name": "double",
+            "id": "double"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734344376025
+        },
+        {
+          "id": "40",
+          "name": "payment_id",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734342284429
+        },
+        {
+          "id": "41",
+          "name": "purchase_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734342355499
+        },
+        {
+          "id": "42",
+          "name": "status",
+          "type": {
+            "name": "enum",
+            "id": "enum"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734342406554
+        }
+      ],
+      "indexes": [],
+      "color": "#ffe374",
+      "createdAt": 1734342203641,
+      "isView": false,
+      "order": 14,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "43",
+      "name": "sub_categories",
+      "x": -114.22221154839144,
+      "y": -191.92752964422516,
+      "fields": [
+        {
+          "id": "44",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734325567530
+        },
+        {
+          "id": "45",
+          "name": "category_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734325602079
+        },
+        {
+          "id": "46",
+          "name": "icon",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734325582313
+        },
+        {
+          "id": "47",
+          "name": "name",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734325590115
+        },
+        {
+          "id": "48",
+          "name": "slug",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734325593399
+        }
+      ],
+      "indexes": [],
+      "color": "#b067e9",
+      "createdAt": 1734325567530,
+      "isView": false,
+      "order": 2,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "49",
+      "name": "author_sales",
+      "x": -746.026226716212,
+      "y": 862.8682421657835,
+      "fields": [
+        {
+          "id": "50",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734343501804
+        },
+        {
+          "id": "51",
+          "name": "author_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734344226775
+        },
+        {
+          "id": "52",
+          "name": "user_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734344233780
+        },
+        {
+          "id": "53",
+          "name": "item_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734344250765
+        },
+        {
+          "id": "54",
+          "name": "amount",
+          "type": {
+            "name": "double",
+            "id": "double"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734344256716
+        },
+        {
+          "id": "55",
+          "name": "author_commission_rate",
+          "type": {
+            "name": "numeric",
+            "id": "numeric"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734344265429
+        },
+        {
+          "id": "56",
+          "name": "author_earning",
+          "type": {
+            "name": "double",
+            "id": "double"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734344310723
+        }
+      ],
+      "indexes": [],
+      "color": "#7175fa",
+      "createdAt": 1734343501804,
+      "isView": false,
+      "order": 16,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "57",
+      "name": "item_comments",
+      "x": -403.30188332268904,
+      "y": 513.1768136820464,
+      "fields": [
+        {
+          "id": "58",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734328846526
+        },
+        {
+          "id": "59",
+          "name": "item_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734328878484
+        },
+        {
+          "id": "60",
+          "name": "user_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734328864566
+        },
+        {
+          "id": "61",
+          "name": "author_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734328870997
+        },
+        {
+          "id": "62",
+          "name": "body",
+          "type": {
+            "name": "text",
+            "id": "text"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734328955330
+        }
+      ],
+      "indexes": [],
+      "color": "#7175fa",
+      "createdAt": 1734328846526,
+      "isView": false,
+      "order": 6,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "63",
+      "name": "categories",
+      "x": -390.5463057375107,
+      "y": -213.01526175631633,
+      "fields": [
+        {
+          "id": "64",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734325144258
+        },
+        {
+          "id": "65",
+          "name": "icon",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734325226880
+        },
+        {
+          "id": "66",
+          "name": "name",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734325155582
+        },
+        {
+          "id": "67",
+          "name": "slug",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734325180002
+        },
+        {
+          "id": "68",
+          "name": "file_type",
+          "type": {
+            "name": "json",
+            "id": "json"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734325201180
+        }
+      ],
+      "indexes": [],
+      "color": "#ff6b8a",
+      "createdAt": 1734325144258,
+      "isView": false,
+      "order": 1,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "69",
+      "name": "ticket_replies",
+      "x": 550.7490259650822,
+      "y": 217.37641390835998,
+      "fields": [
+        {
+          "id": "70",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734335263805
+        },
+        {
+          "id": "71",
+          "name": "user_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734335280645
+        },
+        {
+          "id": "72",
+          "name": "ticket_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734335311226
+        },
+        {
+          "id": "73",
+          "name": "admin_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734335298234
+        },
+        {
+          "id": "74",
+          "name": "body",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734335274303
+        }
+      ],
+      "indexes": [],
+      "color": "#b067e9",
+      "createdAt": 1734335263805,
+      "isView": false,
+      "order": 11,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "75",
+      "name": "purchases",
+      "x": -746.7897792691926,
+      "y": 634.3644929124661,
+      "fields": [
+        {
+          "id": "76",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734341913676
+        },
+        {
+          "id": "77",
+          "name": "user_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734341937523
+        },
+        {
+          "id": "78",
+          "name": "code",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734342181276
+        },
+        {
+          "id": "79",
+          "name": "status",
+          "type": {
+            "name": "enum",
+            "id": "enum"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734344653969,
+          "comments": "pending, completed, cancel"
+        }
+      ],
+      "indexes": [],
+      "color": "#ffe374",
+      "createdAt": 1734341913676,
+      "isView": false,
+      "order": 13,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "80",
+      "name": "uploaded_files",
+      "x": 245.26968647033573,
+      "y": -135.30880075609315,
+      "fields": [
+        {
+          "id": "81",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734330016672
+        },
+        {
+          "id": "82",
+          "name": "author_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734330033899
+        },
+        {
+          "id": "83",
+          "name": "category_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734330038386
+        },
+        {
+          "id": "84",
+          "name": "name",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734330045560
+        },
+        {
+          "id": "85",
+          "name": "mime_type",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734330050592
+        },
+        {
+          "id": "86",
+          "name": "extension",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734330074502
+        },
+        {
+          "id": "87",
+          "name": "size",
+          "type": {
+            "name": "int",
+            "id": "int"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734330085491
+        },
+        {
+          "id": "88",
+          "name": "path",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734330112632
+        }
+      ],
+      "indexes": [],
+      "color": "#ff6b8a",
+      "createdAt": 1734330016672,
+      "isView": false,
+      "order": 8,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "89",
+      "name": "ticket_categories",
+      "x": 864.1605876866387,
+      "y": 229.62142009247515,
+      "fields": [
+        {
+          "id": "90",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734335138993
+        },
+        {
+          "id": "91",
+          "name": "name",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734335156324
+        },
+        {
+          "id": "92",
+          "name": "status",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734335164927
+        }
+      ],
+      "indexes": [],
+      "color": "#ff6b8a",
+      "createdAt": 1734335138993,
+      "isView": false,
+      "order": 9,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "93",
+      "name": "tickets",
+      "x": 245.3966580896393,
+      "y": 231.1697378090754,
+      "fields": [
+        {
+          "id": "94",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734335174962
+        },
+        {
+          "id": "95",
+          "name": "user_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734335185266
+        },
+        {
+          "id": "96",
+          "name": "ticket_category_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734335193670
+        },
+        {
+          "id": "97",
+          "name": "subject",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734335204149
+        }
+      ],
+      "indexes": [],
+      "color": "#4dee8a",
+      "createdAt": 1734335174962,
+      "isView": false,
+      "order": 10,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "98",
+      "name": "item_histories",
+      "x": -71.28266481230972,
+      "y": 256.78230982786414,
+      "fields": [
+        {
+          "id": "99",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734328324714
+        },
+        {
+          "id": "100",
+          "name": "author_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734328359133
+        },
+        {
+          "id": "101",
+          "name": "reviewer_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734328367088
+        },
+        {
+          "id": "102",
+          "name": "item_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734328385278
+        },
+        {
+          "id": "103",
+          "name": "title",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734328391220
+        },
+        {
+          "id": "104",
+          "name": "body",
+          "type": {
+            "name": "text",
+            "id": "text"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734328398491
+        }
+      ],
+      "indexes": [],
+      "color": "#c05dcf",
+      "createdAt": 1734328324714,
+      "isView": false,
+      "order": 5,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "105",
+      "name": "items",
+      "x": -395.2142248843944,
+      "y": 44.709393167230736,
+      "fields": [
+        {
+          "id": "106",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734325860182
+        },
+        {
+          "id": "107",
+          "name": "author_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": true,
+          "primaryKey": true,
+          "createdAt": 1734325876627
+        },
+        {
+          "id": "108",
+          "name": "name",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734325882173
+        },
+        {
+          "id": "109",
+          "name": "slug",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734325899789
+        },
+        {
+          "id": "110",
+          "name": "description",
+          "type": {
+            "name": "longtext",
+            "id": "longtext"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734325904348
+        },
+        {
+          "id": "111",
+          "name": "category_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734325916987
+        },
+        {
+          "id": "112",
+          "name": "sub_category_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734325923406
+        },
+        {
+          "id": "113",
+          "name": "options",
+          "type": {
+            "name": "longtext",
+            "id": "longtext"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734325932357
+        },
+        {
+          "id": "114",
+          "name": "version",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734325958664
+        },
+        {
+          "id": "115",
+          "name": "demo_link",
+          "type": {
+            "name": "text",
+            "id": "text"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734325970004
+        },
+        {
+          "id": "116",
+          "name": "tags",
+          "type": {
+            "name": "json",
+            "id": "json"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734325983670
+        },
+        {
+          "id": "117",
+          "name": "thumbnail",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734325993111
+        },
+        {
+          "id": "118",
+          "name": "preview_type",
+          "type": {
+            "name": "enum",
+            "id": "enum"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326002853
+        },
+        {
+          "id": "119",
+          "name": "preview_image",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326036981
+        },
+        {
+          "id": "120",
+          "name": "preview_video",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326046902
+        },
+        {
+          "id": "121",
+          "name": "preview_audio",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326109400
+        },
+        {
+          "id": "122",
+          "name": "main_file",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326128725
+        },
+        {
+          "id": "123",
+          "name": "is_main_file_external",
+          "type": {
+            "name": "bool",
+            "id": "bool"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326165407
+        },
+        {
+          "id": "124",
+          "name": "screenshots",
+          "type": {
+            "name": "json",
+            "id": "json"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326178051
+        },
+        {
+          "id": "125",
+          "name": "price",
+          "type": {
+            "name": "double",
+            "id": "double"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326195517
+        },
+        {
+          "id": "126",
+          "name": "discount_price",
+          "type": {
+            "name": "double",
+            "id": "double"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326221531
+        },
+        {
+          "id": "127",
+          "name": "is_supported",
+          "type": {
+            "name": "bool",
+            "id": "bool"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326233805
+        },
+        {
+          "id": "128",
+          "name": "support_instructions",
+          "type": {
+            "name": "text",
+            "id": "text"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326255481
+        },
+        {
+          "id": "129",
+          "name": "status",
+          "type": {
+            "name": "enum",
+            "id": "enum"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326272019
+        },
+        {
+          "id": "130",
+          "name": "total_sales",
+          "type": {
+            "name": "int",
+            "id": "int"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326286298
+        },
+        {
+          "id": "131",
+          "name": "total_sale_amount",
+          "type": {
+            "name": "double",
+            "id": "double"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326304680
+        },
+        {
+          "id": "132",
+          "name": "total_earnings",
+          "type": {
+            "name": "double",
+            "id": "double"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326316530
+        },
+        {
+          "id": "133",
+          "name": "is_free",
+          "type": {
+            "name": "bool",
+            "id": "bool"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326434721
+        },
+        {
+          "id": "134",
+          "name": "is_trending",
+          "type": {
+            "name": "bool",
+            "id": "bool"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326444985
+        },
+        {
+          "id": "135",
+          "name": "is_best_selling",
+          "type": {
+            "name": "bool",
+            "id": "bool"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326462598
+        },
+        {
+          "id": "136",
+          "name": "is_on_discount",
+          "type": {
+            "name": "bool",
+            "id": "bool"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326477109
+        },
+        {
+          "id": "137",
+          "name": "is_featured",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734326488478
+        }
+      ],
+      "indexes": [],
+      "color": "#ff6b8a",
+      "createdAt": 1734325860182,
+      "isView": false,
+      "order": 3,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "138",
+      "name": "cart_items",
+      "x": -378.9096685348064,
+      "y": 846.58194564836,
+      "fields": [
+        {
+          "id": "139",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734340788542
+        },
+        {
+          "id": "140",
+          "name": "user_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734340802052
+        },
+        {
+          "id": "141",
+          "name": "item_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734340827871
+        },
+        {
+          "id": "142",
+          "name": "license_type",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734340835041
+        },
+        {
+          "id": "143",
+          "name": "quantity",
+          "type": {
+            "name": "int",
+            "id": "int"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734340866952
+        }
+      ],
+      "indexes": [],
+      "color": "#ff6b8a",
+      "createdAt": 1734340788542,
+      "isView": false,
+      "order": 12,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "144",
+      "name": "withdrawal_methods",
+      "x": 238.99518267140422,
+      "y": 510.25014403281864,
+      "fields": [
+        {
+          "id": "145",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734346065753
+        },
+        {
+          "id": "146",
+          "name": "name",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734347277360
+        },
+        {
+          "id": "147",
+          "name": "minimum",
+          "type": {
+            "name": "double",
+            "id": "double"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734347334991
+        },
+        {
+          "id": "148",
+          "name": "maximum",
+          "type": {
+            "name": "double",
+            "id": "double"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734347344432
+        },
+        {
+          "id": "149",
+          "name": "description",
+          "type": {
+            "name": "text",
+            "id": "text"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734347365775
+        },
+        {
+          "id": "150",
+          "name": "status",
+          "type": {
+            "name": "bool",
+            "id": "bool"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734347384840
+        }
+      ],
+      "indexes": [],
+      "color": "#ff9f74",
+      "createdAt": 1734346065753,
+      "isView": false,
+      "order": 17,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "151",
+      "name": "item_change_logs",
+      "x": -67.10531652050196,
+      "y": 46.68309599323223,
+      "fields": [
+        {
+          "id": "152",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734328119467
+        },
+        {
+          "id": "153",
+          "name": "item_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734328136002
+        },
+        {
+          "id": "154",
+          "name": "version",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734328142693
+        },
+        {
+          "id": "155",
+          "name": "description",
+          "type": {
+            "name": "text",
+            "id": "text"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734328191356
+        }
+      ],
+      "indexes": [],
+      "color": "#7175fa",
+      "createdAt": 1734328119467,
+      "isView": false,
+      "order": 4,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "156",
+      "name": "users",
+      "x": -729.291547763193,
+      "y": 55.07608998342798,
+      "fields": [
+        {
+          "id": "157",
+          "name": "id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1734323093345
+        },
+        {
+          "id": "158",
+          "name": "avatar",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734323281670
+        },
+        {
+          "id": "159",
+          "name": "name",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": false,
+          "primaryKey": false,
+          "createdAt": 1734323112409
+        },
+        {
+          "id": "160",
+          "name": "email",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": false,
+          "primaryKey": false,
+          "createdAt": 1734323125634
+        },
+        {
+          "id": "161",
+          "name": "password",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": false,
+          "primaryKey": false,
+          "createdAt": 1734323131698
+        },
+        {
+          "id": "162",
+          "name": "level_id",
+          "type": {
+            "name": "bigint",
+            "id": "bigint"
+          },
+          "unique": false,
+          "nullable": false,
+          "primaryKey": false,
+          "createdAt": 1734323239108
+        },
+        {
+          "id": "163",
+          "name": "balance",
+          "type": {
+            "name": "double",
+            "id": "double"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734323263323
+        },
+        {
+          "id": "164",
+          "name": "user_type",
+          "type": {
+            "name": "enum",
+            "id": "enum"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734323409844,
+          "comments": "user,author\n"
+        },
+        {
+          "id": "165",
+          "name": "country",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734323464075
+        },
+        {
+          "id": "166",
+          "name": "city",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734324487895
+        },
+        {
+          "id": "167",
+          "name": "address",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734323143624
+        },
+        {
+          "id": "168",
+          "name": "kyc_status",
+          "type": {
+            "name": "bool",
+            "id": "bool"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734324859107
+        },
+        {
+          "id": "169",
+          "name": "total_sale",
+          "type": {
+            "name": "int",
+            "id": "int"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734324945645
+        },
+        {
+          "id": "170",
+          "name": "withdraw_method_id",
+          "type": {
+            "id": "bigint",
+            "name": "bigint"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1734347488464
+        }
+      ],
+      "indexes": [],
+      "color": "#42e0c0",
+      "createdAt": 1734323093345,
+      "isView": false,
+      "order": 0,
+      "diagramId": "08x3xgdiu94f"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "171",
+      "name": "author_sales_author_id_fk",
+      "sourceTableId": "49",
+      "targetTableId": "156",
+      "sourceFieldId": "51",
+      "targetFieldId": "157",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734345782669,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "172",
+      "name": "author_sales_item_id_fk",
+      "sourceTableId": "49",
+      "targetTableId": "105",
+      "sourceFieldId": "53",
+      "targetFieldId": "106",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734345799420,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "173",
+      "name": "author_sales_user_id_fk",
+      "sourceTableId": "49",
+      "targetTableId": "156",
+      "sourceFieldId": "52",
+      "targetFieldId": "157",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734345790016,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "174",
+      "name": "cart_items_item_id_fk",
+      "sourceTableId": "138",
+      "targetTableId": "105",
+      "sourceFieldId": "141",
+      "targetFieldId": "106",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734340911558,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "175",
+      "name": "cart_items_user_id_fk",
+      "sourceTableId": "138",
+      "targetTableId": "156",
+      "sourceFieldId": "140",
+      "targetFieldId": "157",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734340901099,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "176",
+      "name": "categories_id_fk",
+      "sourceTableId": "63",
+      "targetTableId": "43",
+      "sourceFieldId": "64",
+      "targetFieldId": "45",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1734325656864,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "177",
+      "name": "item_comments_author_id_fk",
+      "sourceTableId": "57",
+      "targetTableId": "156",
+      "sourceFieldId": "61",
+      "targetFieldId": "157",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734329035348,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "178",
+      "name": "item_comments_user_id_fk",
+      "sourceTableId": "57",
+      "targetTableId": "156",
+      "sourceFieldId": "60",
+      "targetFieldId": "157",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734329032487,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "179",
+      "name": "item_histories_author_id_fk",
+      "sourceTableId": "98",
+      "targetTableId": "156",
+      "sourceFieldId": "100",
+      "targetFieldId": "157",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734328739426,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "180",
+      "name": "item_reviews_author_id_fk",
+      "sourceTableId": "17",
+      "targetTableId": "156",
+      "sourceFieldId": "20",
+      "targetFieldId": "157",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734331623773,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "181",
+      "name": "item_reviews_user_id_fk",
+      "sourceTableId": "17",
+      "targetTableId": "156",
+      "sourceFieldId": "19",
+      "targetFieldId": "157",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734331618788,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "182",
+      "name": "items_author_id_fk",
+      "sourceTableId": "105",
+      "targetTableId": "156",
+      "sourceFieldId": "107",
+      "targetFieldId": "157",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734328033005,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "183",
+      "name": "items_category_id_fk",
+      "sourceTableId": "105",
+      "targetTableId": "63",
+      "sourceFieldId": "111",
+      "targetFieldId": "64",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734327955852,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "184",
+      "name": "items_id_fk",
+      "sourceTableId": "105",
+      "targetTableId": "57",
+      "sourceFieldId": "106",
+      "targetFieldId": "59",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1734329012789,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "185",
+      "name": "items_id_fk",
+      "sourceTableId": "105",
+      "targetTableId": "17",
+      "sourceFieldId": "106",
+      "targetFieldId": "21",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1734331637649,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "186",
+      "name": "items_id_fk",
+      "sourceTableId": "105",
+      "targetTableId": "151",
+      "sourceFieldId": "106",
+      "targetFieldId": "153",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1734328207211,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "187",
+      "name": "items_id_fk",
+      "sourceTableId": "105",
+      "targetTableId": "98",
+      "sourceFieldId": "106",
+      "targetFieldId": "102",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1734328773790,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "188",
+      "name": "items_sub_category_id_fk",
+      "sourceTableId": "105",
+      "targetTableId": "43",
+      "sourceFieldId": "112",
+      "targetFieldId": "44",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734327962240,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "189",
+      "name": "kyc_verifications_user_id_fk",
+      "sourceTableId": "1",
+      "targetTableId": "156",
+      "sourceFieldId": "3",
+      "targetFieldId": "157",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734348516387,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "191",
+      "name": "purchases_id_fk",
+      "sourceTableId": "75",
+      "targetTableId": "9",
+      "sourceFieldId": "76",
+      "targetFieldId": "11",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1734343909197,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "192",
+      "name": "purchases_user_id_fk",
+      "sourceTableId": "75",
+      "targetTableId": "156",
+      "sourceFieldId": "77",
+      "targetFieldId": "157",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734344518285,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "193",
+      "name": "tickets_id_fk",
+      "sourceTableId": "93",
+      "targetTableId": "69",
+      "sourceFieldId": "94",
+      "targetFieldId": "72",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1734335452159,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "194",
+      "name": "tickets_ticket_category_id_fk",
+      "sourceTableId": "93",
+      "targetTableId": "89",
+      "sourceFieldId": "96",
+      "targetFieldId": "90",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734335369266,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "195",
+      "name": "tickets_user_id_fk",
+      "sourceTableId": "93",
+      "targetTableId": "156",
+      "sourceFieldId": "95",
+      "targetFieldId": "157",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734335420767,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "196",
+      "name": "transactions_purchase_id_fk",
+      "sourceTableId": "31",
+      "targetTableId": "75",
+      "sourceFieldId": "41",
+      "targetFieldId": "76",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734343963308,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "197",
+      "name": "uploaded_files_author_id_fk",
+      "sourceTableId": "80",
+      "targetTableId": "156",
+      "sourceFieldId": "82",
+      "targetFieldId": "157",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734330171371,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "198",
+      "name": "uploaded_files_category_id_fk",
+      "sourceTableId": "80",
+      "targetTableId": "63",
+      "sourceFieldId": "83",
+      "targetFieldId": "64",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734330187670,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "199",
+      "name": "users_id_fk",
+      "sourceTableId": "156",
+      "targetTableId": "24",
+      "sourceFieldId": "157",
+      "targetFieldId": "26",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1734347640303,
+      "diagramId": "08x3xgdiu94f"
+    },
+    {
+      "id": "200",
+      "name": "users_withdraw_method_id_fk",
+      "sourceTableId": "156",
+      "targetTableId": "144",
+      "sourceFieldId": "170",
+      "targetFieldId": "145",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1734347506377,
+      "diagramId": "08x3xgdiu94f"
+    }
+  ],
+  "dependencies": []
+}
