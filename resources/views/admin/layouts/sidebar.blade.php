@@ -557,15 +557,15 @@
             <div class="nav-item dropdown">
                 <a href="javascript:;" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
                     aria-label="Open user menu" aria-expanded="false">
-                    <span class="avatar avatar-sm" style="background-image: url('{{ asset(Auth::user()->avatar) }}')"></span>
+                    <span class="avatar avatar-sm" style="background-image: url({{ asset(admin()->avatar) }})"></span>
                     <div class="d-none d-xl-block ps-2">
-                        <div>Ahmed</div>
-                        <div class="mt-1 small text-secondary">alamir521@gmail.com</div>
+                        <div>{{ admin()->name }}</div>
+                        <div class="mt-1 small text-secondary">{{ admin()->email }}</div>
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
 
-                    <a href="" class="dropdown-item">{{ __('Profile') }}</a>
+                    <a href="{{ route('admin.profile.index') }}" class="dropdown-item">{{ __('Profile') }}</a>
                     <div class="dropdown-divider"></div>
                     <a href="" class="dropdown-item">{{ __('Settings') }}</a>
                     <form method="POST" action="{{ route('admin.logout') }}">
