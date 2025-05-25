@@ -8,11 +8,11 @@ class NotificationService {
     }
 
     static function UPDATED($message = null) {
-        notyf()->success($message ?? __('Update Successfully'));
+        notyf()->info($message ?? __('Update Successfully'));
     }
 
     static function DELETED($message = null) {
-        notyf()->success($message ?? __('Deleted Successfully'));
+        notyf()->info($message ?? __('Deleted Successfully'));
     }
 
     static function ERROR($message = null) {
