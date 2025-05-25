@@ -63,7 +63,7 @@ class RoleController extends Controller
     {
         if ($role->name === 'super admin') {
             NotificationService::ERROR();
-            return to_route('admin.roles.index');
+            return redirect()->back(); 
         }
 
         $permissions = Permission::all()->groupBy('group_name');
@@ -108,7 +108,7 @@ class RoleController extends Controller
             DB::commit();
             NotificationService::DELETED();
             return response()->json(['status' => 'success', 'message' => __('Deleted Successfully')], 200);
-            
+
         } catch (\Throwable $th) {
             DB::rollBack();
             Log::error("an error occurred during deleting role:", ["exception" => $th]);
