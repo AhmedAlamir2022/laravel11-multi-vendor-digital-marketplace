@@ -75,7 +75,7 @@
                 </li>
 
 
-                {{-- @if (canAccess(['manage categories']))
+                @if (canAccess(['manage categories']))
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle {{ setSidebarActive(['admin.categories.index', 'admin.sub-categories.index']) == 'active' ? 'show' : '' }}"
                             href="#navbar-layout" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button"
@@ -97,15 +97,15 @@
                                         {{ __('Main Categories') }}
                                     </a>
 
-                                    <a class="dropdown-item {{ setSidebarActive(['admin.sub-categories.index']) }}"
+                                    {{-- <a class="dropdown-item {{ setSidebarActive(['admin.sub-categories.index']) }}"
                                         href="{{ route('admin.sub-categories.index') }}">
                                         {{ __('Sub Categories') }}
-                                    </a>
+                                    </a> --}}
                                 </div>
                             </div>
                         </div>
                     </li>
-                @endif --}}
+                @endif
 
                 {{-- @if (canAccess(['manage order']))
                     <li class="nav-item dropdown">
