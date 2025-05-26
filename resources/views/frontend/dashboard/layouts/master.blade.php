@@ -201,7 +201,7 @@
                                 <div class="user-profile">
                                     <button class="user-profile__button flex-align">
                                         <span class="user-profile__thumb">
-                                            <img src="{{ asset('assets/frontend/images/thumbs/user-profile.png') }}"
+                                            <img src="{{  asset(user()->avatar) }}"
                                                 class="" alt="">
                                         </span>
                                     </button>

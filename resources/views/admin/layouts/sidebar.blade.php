@@ -546,7 +546,7 @@
                     </svg>
                 </a>
 
-            </div>
+            </div> 
             <div class="nav-item dropdown">
                 <a href="javascript:;" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
                     aria-label="Open user menu" aria-expanded="false">
