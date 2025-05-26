@@ -476,20 +476,20 @@
                     </li>
                 @endif --}}
 
-                {{-- @if (canAccess(['manage setting']))
-                    <li class="nav-item ">
-                        <a class="nav-link {{ setSidebarActive(['admin.settings.index']) }}"
-                            href="{{ route('admin.settings.index') }}">
-                            <span
-                                class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
-                                <i class="ti ti-settings sidebar-icon"></i>
-                            </span>
-                            <span class="nav-link-title">
-                                Settings
-                            </span>
-                        </a>
-                    </li>
-                @endif --}}
+
+                <li class="nav-item ">
+                    <a class="nav-link {{ setSidebarActive(['admin.settings.index']) }}"
+                        href="{{ route('admin.settings.index') }}">
+                        <span
+                            class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                            <i class="ti ti-settings sidebar-icon"></i>
+                        </span>
+                        <span class="nav-link-title">
+                            Settings
+                        </span>
+                    </a>
+                </li>
+
 
                 {{-- @if (canAccess(['manage setting']))
                     <li class="nav-item ">
@@ -546,7 +546,7 @@
                     </svg>
                 </a>
 
-            </div> 
+            </div>
             <div class="nav-item dropdown">
                 <a href="javascript:;" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
                     aria-label="Open user menu" aria-expanded="false">
