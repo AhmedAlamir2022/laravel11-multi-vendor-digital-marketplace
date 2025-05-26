@@ -216,12 +216,12 @@
                     <div class="dropdown-menu {{ setSidebarActive(['admin.kyc.index', 'admin.kyc-settings.index']) }}">
                         <div class="dropdown-menu-columns">
                             <div class="dropdown-menu-column">
-                                {{-- <a class="dropdown-item {{ setSidebarActive(['admin.kyc.index']) }}"
+                                <a class="dropdown-item {{ setSidebarActive(['admin.kyc.index']) }}"
                                     href="{{ route('admin.kyc.index') }}">
                                     KYC Requests
                                     <span
                                         class="badge badge-sm bg-yellow-lt text-uppercase ms-auto">{{ pendingKycCount() }}</span>
-                                </a> --}}
+                                </a>
                                 <a class="dropdown-item {{ setSidebarActive(['admin.kyc-settings.index']) }}"
                                     href="{{ route('admin.kyc-settings.index') }}">
                                     KYC Settings
