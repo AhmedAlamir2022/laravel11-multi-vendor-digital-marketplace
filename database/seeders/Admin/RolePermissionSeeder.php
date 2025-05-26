@@ -42,14 +42,14 @@ class RolePermissionSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL
             ),
-            // array(
-            //     'id' => '2',
-            //     'name' => 'manage categories',
-            //     'guard_name' => 'admin',
-            //     'group_name' => 'Category Module',
-            //     'created_at' => NULL,
-            //     'updated_at' => NULL
-            // ),
+            array(
+                'id' => '2',
+                'name' => 'manage categories',
+                'guard_name' => 'admin',
+                'group_name' => 'Category Module',
+                'created_at' => NULL,
+                'updated_at' => NULL
+            ),
             // array(
             //     'id' => '3',
             //     'name' => 'manage order',
@@ -58,14 +58,14 @@ class RolePermissionSeeder extends Seeder
             //     'created_at' => '2025-02-18 05:33:15',
             //     'updated_at' => '2025-02-18 05:33:15'
             // ),
-            // array(
-            //     'id' => '4',
-            //     'name' => 'manage kyc',
-            //     'guard_name' => 'admin',
-            //     'group_name' => 'Manage KYC',
-            //     'created_at' => '2025-02-18 05:34:56',
-            //     'updated_at' => '2025-02-18 05:34:56'
-            // ),
+            array(
+                'id' => '4',
+                'name' => 'manage kyc',
+                'guard_name' => 'admin',
+                'group_name' => 'Manage KYC',
+                'created_at' => '2025-05-25 05:34:56',
+                'updated_at' => '2025-05-25 05:34:56'
+            ),
             // array(
             //     'id' => '5',
             //     'name' => 'manage withdraw request',
@@ -80,9 +80,23 @@ class RolePermissionSeeder extends Seeder
             // array('id' => '9', 'name' => 'manage banner', 'guard_name' => 'admin', 'group_name' => 'Manage Banner', 'created_at' => '2025-02-18 05:37:34', 'updated_at' => '2025-02-18 05:37:34'),
             // array('id' => '10', 'name' => 'page builder', 'guard_name' => 'admin', 'group_name' => 'Page Builder', 'created_at' => '2025-02-18 05:37:49', 'updated_at' => '2025-02-18 05:37:49'),
             // array('id' => '11', 'name' => 'manage newsletter', 'guard_name' => 'admin', 'group_name' => 'Manage Newsletter', 'created_at' => '2025-02-18 05:38:10', 'updated_at' => '2025-02-18 05:38:10'),
-            // array('id' => '12', 'name' => 'access management', 'guard_name' => 'admin', 'group_name' => 'Access Management', 'created_at' => '2025-02-18 05:38:27', 'updated_at' => '2025-02-18 05:38:27'),
+            array(
+                'id' => '12',
+                'name' => 'access management',
+                'guard_name' => 'admin',
+                'group_name' => 'Access Management',
+                'created_at' => '2025-05-18 05:38:27',
+                'updated_at' => '2025-05-18 05:38:27'
+            ),
             // array('id' => '13', 'name' => 'payment setting', 'guard_name' => 'admin', 'group_name' => 'Payment Setting', 'created_at' => '2025-02-18 05:38:37', 'updated_at' => '2025-02-18 05:38:37'),
-            // array('id' => '14', 'name' => 'manage settings', 'guard_name' => 'admin', 'group_name' => 'Manage Settings', 'created_at' => '2025-02-18 05:38:48', 'updated_at' => '2025-02-18 05:38:48')
+            array(
+                'id' => '14',
+                'name' => 'manage settings',
+                'guard_name' => 'admin',
+                'group_name' => 'Manage Settings',
+                'created_at' => '2025-05-18 05:38:48',
+                'updated_at' => '2025-05-18 05:38:48'
+            )
 
         ]);
     }

@@ -201,36 +201,37 @@
                     </li>
                 @endif --}}
 
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle {{ setSidebarActive(['admin.kyc.index', 'admin.kyc-settings.index']) }}"
-                        href="#navbar-layout" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button"
-                        aria-expanded="true">
-                        <span class="nav-link-icon d-md-none d-lg-inline-block">
-                            <i class="ti ti-user-scan sidebar-icon"></i>
-                        </span>
-                        <span class="nav-link-title">
-                            KYC
-                        </span>
-                    </a>
-                    <div class="dropdown-menu {{ setSidebarActive(['admin.kyc.index', 'admin.kyc-settings.index']) }}">
-                        <div class="dropdown-menu-columns">
-                            <div class="dropdown-menu-column">
-                                <a class="dropdown-item {{ setSidebarActive(['admin.kyc.index']) }}"
-                                    href="{{ route('admin.kyc.index') }}">
-                                    KYC Requests
-                                    <span
-                                        class="badge badge-sm bg-yellow-lt text-uppercase ms-auto">{{ pendingKycCount() }}</span>
-                                </a>
-                                <a class="dropdown-item {{ setSidebarActive(['admin.kyc-settings.index']) }}"
-                                    href="{{ route('admin.kyc-settings.index') }}">
-                                    KYC Settings
-                                </a>
+                @if (canAccess(['mange kyc']))
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {{ setSidebarActive(['admin.kyc.index', 'admin.kyc-settings.index']) }}"
+                            href="#navbar-layout" data-bs-toggle="dropdown" data-bs-auto-close="false"
+                            role="button" aria-expanded="true">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                <i class="ti ti-user-scan sidebar-icon"></i>
+                            </span>
+                            <span class="nav-link-title">
+                                KYC
+                            </span>
+                        </a>
+                        <div
+                            class="dropdown-menu {{ setSidebarActive(['admin.kyc.index', 'admin.kyc-settings.index']) }}">
+                            <div class="dropdown-menu-columns">
+                                <div class="dropdown-menu-column">
+                                    <a class="dropdown-item {{ setSidebarActive(['admin.kyc.index']) }}"
+                                        href="{{ route('admin.kyc.index') }}">
+                                        KYC Requests
+                                        <span
+                                            class="badge badge-sm bg-yellow-lt text-uppercase ms-auto">{{ pendingKycCount() }}</span>
+                                    </a>
+                                    <a class="dropdown-item {{ setSidebarActive(['admin.kyc-settings.index']) }}"
+                                        href="{{ route('admin.kyc-settings.index') }}">
+                                        KYC Settings
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-
+                    </li>
+                @endif
 
                 {{-- @if (canAccess(['mange withdraw request']))
                     <li class="nav-item">
@@ -430,36 +431,36 @@
                     </li>
                 @endif --}}
 
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle {{ setSidebarActive(['admin.role-users.index', 'admin.roles.index']) == 'active' ? 'show' : '' }}"
-                        href="#navbar-layout" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button"
-                        aria-expanded="true">
-                        <span
-                            class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/layout-2 -->
-                            <i class="ti ti-shield-cog sidebar-icon"></i>
-                        </span>
-                        <span class="nav-link-title">
-                            Access Management
-                        </span>
-                    </a>
-                    <div
-                        class="dropdown-menu {{ setSidebarActive(['admin.role-users.index', 'admin.roles.index']) == 'active' ? 'show' : '' }}">
-                        <div class="dropdown-menu-columns">
-                            <div class="dropdown-menu-column">
-                                <a class="dropdown-item {{ setSidebarActive(['admin.role-users.index']) }}"
-                                    href="{{ route('admin.role-users.index') }}">
-                                    Role Users
-                                </a>
-                                <a class="dropdown-item {{ setSidebarActive(['admin.roles.index']) }}"
-                                    href="{{ route('admin.roles.index') }}">
-                                    Role & Permissions
-                                </a>
+                @if (canAccess(['access management']))
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {{ setSidebarActive(['admin.role-users.index', 'admin.roles.index']) == 'active' ? 'show' : '' }}"
+                            href="#navbar-layout" data-bs-toggle="dropdown" data-bs-auto-close="false"
+                            role="button" aria-expanded="true">
+                            <span
+                                class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/layout-2 -->
+                                <i class="ti ti-shield-cog sidebar-icon"></i>
+                            </span>
+                            <span class="nav-link-title">
+                                Access Management
+                            </span>
+                        </a>
+                        <div
+                            class="dropdown-menu {{ setSidebarActive(['admin.role-users.index', 'admin.roles.index']) == 'active' ? 'show' : '' }}">
+                            <div class="dropdown-menu-columns">
+                                <div class="dropdown-menu-column">
+                                    <a class="dropdown-item {{ setSidebarActive(['admin.role-users.index']) }}"
+                                        href="{{ route('admin.role-users.index') }}">
+                                        Role Users
+                                    </a>
+                                    <a class="dropdown-item {{ setSidebarActive(['admin.roles.index']) }}"
+                                        href="{{ route('admin.roles.index') }}">
+                                        Role & Permissions
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-
+                    </li>
+                @endif
 
                 {{-- @if (canAccess(['payment setting']))
                     <li class="nav-item">
@@ -476,20 +477,20 @@
                     </li>
                 @endif --}}
 
-
-                <li class="nav-item ">
-                    <a class="nav-link {{ setSidebarActive(['admin.settings.index']) }}"
-                        href="{{ route('admin.settings.index') }}">
-                        <span
-                            class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
-                            <i class="ti ti-settings sidebar-icon"></i>
-                        </span>
-                        <span class="nav-link-title">
-                            Settings
-                        </span>
-                    </a>
-                </li>
-
+                @if (canAccess(['manage setting']))
+                    <li class="nav-item ">
+                        <a class="nav-link {{ setSidebarActive(['admin.settings.index']) }}"
+                            href="{{ route('admin.settings.index') }}">
+                            <span
+                                class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                                <i class="ti ti-settings sidebar-icon"></i>
+                            </span>
+                            <span class="nav-link-title">
+                                Settings
+                            </span>
+                        </a>
+                    </li>
+                @endif
 
                 {{-- @if (canAccess(['manage setting']))
                     <li class="nav-item ">

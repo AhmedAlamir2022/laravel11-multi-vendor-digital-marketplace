@@ -11,15 +11,17 @@ use App\Services\NotificationService;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
 
-class SubCategoryController extends Controller
+class SubCategoryController extends Controller implements HasMiddleware
 {
-    // static function Middleware(): array
-    // {
-    //     return [
-    //         new Middleware('permission:manage categories')
-    //     ];
-    // }
+    static function Middleware(): array
+    {
+        return [
+            new Middleware('permission:manage categories')
+        ];
+    }
 
     /**
      * Display a listing of the resource.

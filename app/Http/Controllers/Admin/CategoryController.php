@@ -9,15 +9,17 @@ use App\Models\Category;
 use App\Services\NotificationService;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
 
-class CategoryController extends Controller
+class CategoryController extends Controller implements HasMiddleware
 {
-    // static function Middleware() : array
-    // {
-    //     return [
-    //         new Middleware('permission:manage categories')
-    //     ];
-    // }
+    static function Middleware() : array
+    {
+        return [
+            new Middleware('permission:manage categories')
+        ];
+    }
 
     /**
      * Display a listing of the resource.

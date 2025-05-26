@@ -10,19 +10,21 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
-class RoleController extends Controller
+class RoleController extends Controller implements HasMiddleware
 {
-    // static function Middleware(): array
-    // {
-    //     return [
-    //         new Middleware('permission:access management')
-    //     ];
-    // }
+    static function Middleware(): array
+    {
+        return [
+            new Middleware('permission:access management')
+        ];
+    }
 
     /**
      * Display a listing of the resource.
@@ -63,7 +65,7 @@ class RoleController extends Controller
     {
         if ($role->name === 'super admin') {
             NotificationService::ERROR();
-            return redirect()->back(); 
+            return redirect()->back();
         }
 
         $permissions = Permission::all()->groupBy('group_name');
