@@ -97,10 +97,10 @@
                                         {{ __('Main Categories') }}
                                     </a>
 
-                                    {{-- <a class="dropdown-item {{ setSidebarActive(['admin.sub-categories.index']) }}"
+                                    <a class="dropdown-item {{ setSidebarActive(['admin.sub-categories.index']) }}"
                                         href="{{ route('admin.sub-categories.index') }}">
                                         {{ __('Sub Categories') }}
-                                    </a> --}}
+                                    </a>
                                 </div>
                             </div>
                         </div>

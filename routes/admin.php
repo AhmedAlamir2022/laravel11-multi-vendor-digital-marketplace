@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\RoleUserController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\SubCategoryController;
 use Illuminate\Support\Facades\Route;
  // admin routes
 Route::middleware('guest:admin')->prefix('admin')->as('admin.')->group(function () {
@@ -61,7 +62,7 @@ Route::middleware('auth:admin')->prefix('admin')->as('admin.')->group(function (
 
     /** Categories Routes */
     Route::resource('categories', CategoryController::class);
-    // Route::resource('sub-categories', SubCategoryController::class);
+    Route::resource('sub-categories', SubCategoryController::class);
 
     /** Settings Route */
     Route::get('settings', [SettingController::class, 'index'])->name('settings.index');
