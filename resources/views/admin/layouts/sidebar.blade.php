@@ -135,7 +135,7 @@
                     </li>
                 @endif --}}
 
-                {{-- @if (canAccess(['review products']))
+                @if (canAccess(['review products']))
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle
                         {{ setSidebarActive([
@@ -184,22 +184,28 @@
                                     <a class="dropdown-item {{ setSidebarActive(['admin.item-reviews.softrejected.index']) }}"
                                         href="{{ route('admin.item-reviews.softrejected.index') }}">
                                         Soft Rejected
+                                        <span
+                                            class="badge badge-sm bg-yellow-lt text-uppercase ms-auto">{{ getItemStatusCount('soft_rejected') }}</span>
                                     </a>
                                     <a class="dropdown-item {{ setSidebarActive(['admin.item-reviews.hardrejected.index']) }}"
                                         href="{{ route('admin.item-reviews.hardrejected.index') }}">
                                         Hard Rejected
+                                        <span
+                                            class="badge badge-sm bg-yellow-lt text-uppercase ms-auto">{{ getItemStatusCount('hard_rejected') }}</span>
                                     </a>
 
                                     <a class="dropdown-item {{ setSidebarActive(['admin.item-reviews.approved.index']) }}"
                                         href="{{ route('admin.item-reviews.approved.index') }}">
                                         Approved
+                                        <span
+                                            class="badge badge-sm bg-yellow-lt text-uppercase ms-auto">{{ getItemStatusCount('approved') }}</span>
                                     </a>
 
                                 </div>
                             </div>
                         </div>
                     </li>
-                @endif --}}
+                @endif
 
                 @if (canAccess(['mange kyc']))
                     <li class="nav-item dropdown">
