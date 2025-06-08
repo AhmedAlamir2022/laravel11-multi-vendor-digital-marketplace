@@ -28,7 +28,7 @@
             </li>
             @if(isAuthor())
             <li class="sidebar-list__item">
-                <a href="" class="sidebar-list__link">
+                <a href="{{ route('user.items.index') }}" class="sidebar-list__link">
                     <span class="sidebar-list__icon">
                         <i class="ti ti-clipboard-list"></i>
                     </span>
