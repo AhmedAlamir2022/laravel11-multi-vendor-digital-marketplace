@@ -36,7 +36,7 @@
     <!-- Main css -->
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/main.css') }}">
 
-    
+
 </head>
 
 <body>

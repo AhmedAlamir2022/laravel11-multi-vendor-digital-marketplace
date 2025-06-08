@@ -1,10 +1,10 @@
 
-    {{-- @php
+    @php
         $categories = App\Models\Category::with('subCategories')->where('show_at_nav', 1)->get();
-        $cartCount = App\Models\CartItem::where('user_id', user()?->id)->count();
-        $banner = App\Models\FlashSaleBanner::first();
-        $customPages = App\Models\CustomPage::where(['status' => 1, 'show_at_nav' => 1])->get();
-    @endphp --}}
+        // $cartCount = App\Models\CartItem::where('user_id', user()?->id)->count();
+        // $banner = App\Models\FlashSaleBanner::first();
+        // $customPages = App\Models\CustomPage::where(['status' => 1, 'show_at_nav' => 1])->get();
+    @endphp
     <!-- ============================ Sale Offer Start =========================== -->
     {{-- @if($banner?->status == 1)
     <div class="sale-offer ">
@@ -48,7 +48,7 @@
                             <a href="{{ url('/') }}" class="nav-menu__link">Home</a>
                         </li>
                         <li class="nav-menu__item">
-                            <a href="" class="nav-menu__link">Products</a>
+                            <a href="{{ route('products') }}" class="nav-menu__link">Products</a>
                         </li>
                         <li class="nav-menu__item">
                             <a href="" class="nav-menu__link">Contact</a>
@@ -102,7 +102,7 @@
     <section class="category_menu_area d-none d-lg-block">
         <div class="container container-full">
             <ul class="category_menu">
-                {{-- @foreach($categories as $category)
+                @foreach($categories as $category)
                 <li class="category_menu_list {{ $category->subCategories->count() > 0 ? 'has-submenu' : '' }}">
                     <a class="category_menu_link" href="{{ route('products', ['category' => $category->slug]) }}">{{ $category->name }}</a>
                     @if($category->subCategories->count() > 0)
@@ -115,7 +115,7 @@
                     </ul>
                     @endif
                 </li>
-                @endforeach --}}
+                @endforeach
 
             </ul>
         </div>

@@ -53,4 +53,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(KycVerification::class, 'user_id', 'id')->orderBy('created_at', 'desc');
     }
+
+    function products() : HasMany
+    {
+        return $this->hasMany(Item::class, 'author_id', 'id')->where('status', 'approved');
+    }
 }

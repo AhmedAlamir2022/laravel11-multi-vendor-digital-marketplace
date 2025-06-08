@@ -4,12 +4,21 @@ use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ItemController;
 use App\Http\Controllers\Frontend\KycVerificationController;
+use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Controllers\Frontend\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/products', [ProductController::class, 'index'])->name('products');
+Route::get('/products/{slug}', [ProductController::class, 'show'])->name('products.show');
 
-Route::group(['middleware' => ['auth', 'verified']], function() {
+/** Item Comment Route */
+Route::post('/item/{id}/comment', [ItemCommentController::class, 'store'])->name('item.comment.store');
+
+/** Item Review Routes */
+Route::post('/item/{id}/review', [ItemReviewController::class, 'store'])->name('item.review.store');
+
+Route::group(['middleware' => ['auth', 'verified']], function () {
     /** Dashboard Routes */
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -23,7 +32,7 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::post('kyc', [KycVerificationController::class, 'store'])->name('kyc.store')->middleware('kyc');
 
     /** Author Route Group */
-    Route::group(['middleware' => 'is_author'], function() {
+    Route::group(['middleware' => 'is_author'], function () {
         Route::get('items', [ItemController::class, 'index'])->name('items.index');
         // Route::post('/withdraw-info', [ProfileController::class, 'withdrawInfo'])->name('withdraw.info');
         // Route::get('/withdraws', [AuthorWithdrawController::class, 'index'])->name('withdraws.index');
@@ -32,9 +41,9 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
     });
 });
 
-Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 'user.'], function() {
+Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 'user.'], function () {
     /** Author Route Group */
-    Route::group(['middleware' => 'is_author'], function() {
+    Route::group(['middleware' => 'is_author'], function () {
         Route::get('items', [ItemController::class, 'index'])->name('items.index');
         Route::get('items/create', [ItemController::class, 'create'])->name('items.create');
         Route::post('/item-uploads', [ItemController::class, 'itemUploads'])->name('items.uploads');
@@ -50,4 +59,4 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 
     });
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
