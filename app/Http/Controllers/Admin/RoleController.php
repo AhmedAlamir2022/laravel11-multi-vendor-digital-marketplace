@@ -49,6 +49,7 @@ class RoleController extends Controller implements HasMiddleware
      */
     public function store(RoleStoreRequest $request): RedirectResponse
     {
+        // dd($request->all());
         $role = Role::create([
             'name' => $request->role,
             'guard_name' => 'admin'

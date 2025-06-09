@@ -6,6 +6,7 @@ use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ItemController;
 use App\Http\Controllers\Frontend\KycVerificationController;
+use App\Http\Controllers\Frontend\PaymentController;
 use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Controllers\Frontend\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -41,7 +42,21 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     /** checkout routes */
     Route::get('checkout', CheckoutController::class)->name('checkout.index');
 
+    /** Payment Routes */
+    Route::get('payment/completed', [PaymentController::class, 'completed'])->name('payment.completed');
+    Route::get('payment/canceled', [PaymentController::class, 'canceled'])->name('payment.canceled');
 
+    Route::get('payment/paypal', [PaymentController::class, 'payWithPaypal'])->name('payment.paypal');
+    Route::get('payment/paypal/success', [PaymentController::class, 'paypalSuccess'])->name('payment.paypal.success');
+    Route::get('payment/paypal/cancel', [PaymentController::class, 'paypalCancel'])->name('payment.paypal.cancel');
+
+    /** Stripe Routes */
+    // Route::get('payment/stripe', [PaymentController::class, 'payWithStripe'])->name('payment.stripe');
+    // Route::get('payment/stripe/success', [PaymentController::class, 'stripeSuccess'])->name('payment.stripe.success');
+    // Route::get('payment/stripe/cancel', [PaymentController::class, 'stripeCanceled'])->name('payment.stripe.cancel');
+    // Route::get('/payment/razorpay/redirect', [PaymentController::class, 'razorpayRedirect'])->name('payment.razorpay.redirect');
+    // Route::get('payment/razorpay', [PaymentController::class, 'payWithRazorpay'])->name('payment.razorpay');
+    // Route::get('payment/razorpay/success', [PaymentController::class, 'razorpaySuccess'])->name('payment.razorpay.success');
 
     /** Author Route Group */
     Route::group(['middleware' => 'is_author'], function () {

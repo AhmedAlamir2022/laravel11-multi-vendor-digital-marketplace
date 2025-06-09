@@ -468,7 +468,7 @@
                     </li>
                 @endif
 
-                {{-- @if (canAccess(['payment setting']))
+                @if (canAccess(['payment setting']))
                     <li class="nav-item">
                         <a class="nav-link {{ setSidebarActive(['admin.payment-settings.index']) }}"
                             href="{{ route('admin.payment-settings.index') }}">
@@ -481,7 +481,7 @@
                             </span>
                         </a>
                     </li>
-                @endif --}}
+                @endif
 
                 @if (canAccess(['manage setting']))
                     <li class="nav-item ">

@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ItemReviewController;
 use App\Http\Controllers\Admin\KycController;
 use App\Http\Controllers\Admin\KYCSettingController;
+use App\Http\Controllers\Admin\PaymentSettingController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\RoleUserController;
@@ -75,6 +76,15 @@ Route::middleware('auth:admin')->prefix('admin')->as('admin.')->group(function (
     Route::get('item-reviews/{id}/show', [ItemReviewController::class, 'show'])->name('item-reviews.show');
     Route::post('item-reviews/{id}/status', [ItemReviewController::class, 'updateStatus'])->name('item-reviews.status');
     Route::get('item/{id}/download', [ItemReviewController::class, 'itemDownload'])->name('item.download');
+
+
+    /** Payment Settings Routes */
+    Route::get('payment-settings', [PaymentSettingController::class, 'index'])->name('payment-settings.index');
+
+    Route::put('paypal-setting', [PaymentSettingController::class, 'updatePaypalSettings'])->name('paypal-settings.update');
+
+    Route::get('stripe-setting', [PaymentSettingController::class, 'stripeSetting'])->name('stripe-settings.index');
+    Route::put('stripe-setting', [PaymentSettingController::class, 'updateStripeSettings'])->name('stripe-settings.update');
 
     /** Settings Route */
     Route::get('settings', [SettingController::class, 'index'])->name('settings.index');

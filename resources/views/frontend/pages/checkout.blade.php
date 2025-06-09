@@ -41,26 +41,21 @@
                 <div class="col-xl-8 col-lg-7">
                     <div class="payment_area">
                         <div class="row">
-                            <div class="col-xl-3 col-6 col-md-4 wow fadeInUp">
-                                <a href="" class="payment_mathod">
+                            <div class="col-xl-6 col-6 col-md-6 wow fadeInUp">
+                                <a href="{{ route('payment.paypal') }}" class="payment_mathod">
                                     <img src="{{ asset('assets/frontend/images/thumbs/payment_2.png') }}" alt="payment"
                                         class="img-fluid w-100">
                                 </a>
                             </div>
 
-                            <div class="col-xl-3 col-6 col-md-4 wow fadeInUp">
+                            <div class="col-xl-6 col-6 col-md-6 wow fadeInUp">
                                 <a href="" class="payment_mathod">
                                     <img src="{{ asset('assets/frontend/images/thumbs/payment_4.png') }}" alt="payment"
                                         class="img-fluid w-100">
                                 </a>
                             </div>
 
-                            <div class="col-xl-3 col-6 col-md-4 wow fadeInUp">
-                                <a href="" class="payment_mathod">
-                                    <img src="{{ asset('assets/frontend/images/thumbs/payment_razorpay.png') }}"
-                                        alt="payment" class="img-fluid w-100">
-                                </a>
-                            </div>
+
                         </div>
                     </div>
                 </div>
