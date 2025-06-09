@@ -36,7 +36,7 @@
     <!-- Main css -->
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/main.css') }}">
 
-
+    @routes
 </head>
 
 <body>
@@ -70,7 +70,8 @@
         <button type="button" class="close-button"> <i class="las la-times"></i> </button>
         <div class="mobile-menu__inner">
             <a href="index.html" class="mobile-menu__logo">
-                <img src="{{ asset('assets/frontend/images/logo/logo-two.png') }}" alt="Logo" class="white-version">
+                <img src="{{ asset('assets/frontend/images/logo/logo-two.png') }}" alt="Logo"
+                    class="white-version">
             </a>
             <div class="mobile-menu__menu">
                 <div class="header-right__inner d-lg-none my-3 gap-1 d-flex flx-align">
@@ -84,11 +85,11 @@
                             @guest
                                 <li><a class="dropdown-item" href="{{ route('login') }}">Sign In</a></li>
                                 <li><a class="dropdown-item" href="{{ route('register') }}">Sign Up</a></li>
-                                @endguest
-                                @auth
+                            @endguest
+                            @auth
                                 <li><a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a></li>
                                 <li><a class="dropdown-item" href="{{ route('profile') }}">Profile</a></li>
-                                @endauth
+                            @endauth
                         </ul>
                     </div>
                 </div>
@@ -107,7 +108,7 @@
                     {{-- @php
                         $customPages = App\Models\CustomPage::where(['status' => 1, 'show_at_nav' => 1])->get();
                     @endphp
-                    @foreach($customPages as $page)
+                    @foreach ($customPages as $page)
                     <li class="nav-menu__item">
                         <a href="{{ route('page', $page->slug) }}" class="nav-menu__link">{{ $page->name }}</a>
                     </li>
@@ -142,7 +143,8 @@
     </main>
 
     <!-- Jquery js -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- Bootstrap Bundle Js -->
     <script src="{{ asset('assets/frontend/js/boostrap.bundle.min.js') }}"></script>
 
@@ -179,7 +181,7 @@
     <script src="{{ asset('assets/frontend/js/default/cart.js') }}"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             const players = new Map();
             const hoverTimers = new Map(); // Store timeout IDs for each video
 
@@ -190,12 +192,14 @@
                     source.removeAttribute("src"); // Prevent preloading
                 }
 
-                const player = new Plyr(el, { controls: [] });
+                const player = new Plyr(el, {
+                    controls: []
+                });
                 players.set(el, player);
             });
 
-            $(function () {
-                $(".product-video").on("mouseover", function () {
+            $(function() {
+                $(".product-video").on("mouseover", function() {
                     const videoElement = $(this).find(".player")[0];
                     if (videoElement && players.has(videoElement)) {
                         // Set a delay before loading the video
@@ -214,7 +218,7 @@
                     }
                 });
 
-                $(".product-video").on("mouseout", function () {
+                $(".product-video").on("mouseout", function() {
                     const videoElement = $(this).find(".player")[0];
                     if (videoElement && players.has(videoElement)) {
                         const player = players.get(videoElement);
@@ -230,7 +234,7 @@
             });
         });
 
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             let currentPlayer = null; // Store reference to the currently playing player
 
             // Initialize audio players with play, mute, and progress controls
@@ -248,8 +252,6 @@
                 });
             });
         });
-
-
     </script>
 
     @stack('scripts')

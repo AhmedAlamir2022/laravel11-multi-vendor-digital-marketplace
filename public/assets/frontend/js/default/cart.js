@@ -8,6 +8,7 @@ $(function() {
     /** add to cart */
     $('.add-cart').on('click', function(e) {
         e.preventDefault();
+        // alert('working');
         const id = $(this).data('id');
 
         $.ajax({
