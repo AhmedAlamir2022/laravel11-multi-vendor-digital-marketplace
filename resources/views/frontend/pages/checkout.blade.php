@@ -49,7 +49,7 @@
                             </div>
 
                             <div class="col-xl-6 col-6 col-md-6 wow fadeInUp">
-                                <a href="" class="payment_mathod">
+                                <a href="{{ route('payment.stripe') }}" class="payment_mathod">
                                     <img src="{{ asset('assets/frontend/images/thumbs/payment_4.png') }}" alt="payment"
                                         class="img-fluid w-100">
                                 </a>

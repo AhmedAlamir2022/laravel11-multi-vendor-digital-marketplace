@@ -14,7 +14,7 @@ use Illuminate\Routing\Controllers\Middleware;
 
 class CategoryController extends Controller implements HasMiddleware
 {
-    static function Middleware() : array
+    static function Middleware(): array
     {
         return [
             new Middleware('permission:manage categories')
@@ -48,7 +48,7 @@ class CategoryController extends Controller implements HasMiddleware
         $category->icon = $request->icon;
         $category->name = $request->name;
         $category->slug = \Str::slug($request->name);
-        $category->file_types =explode(',', $request->file_types);
+        $category->file_types = explode(',', $request->file_types);
         $category->show_at_nav = $request->show_at_nav;
         $category->show_at_featured = $request->show_at_featured;
         $category->save();
@@ -88,7 +88,7 @@ class CategoryController extends Controller implements HasMiddleware
     public function destroy(Category $category)
     {
         try {
-            if($category->subCategories()->exists()) {
+            if ($category->subCategories()->exists()) {
                 return response()->json(['status' => 'error', 'message' => __('This category has sub categories and can not be deleted')], 402);
             }
 

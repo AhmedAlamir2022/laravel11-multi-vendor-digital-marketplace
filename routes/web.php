@@ -51,9 +51,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('payment/paypal/cancel', [PaymentController::class, 'paypalCancel'])->name('payment.paypal.cancel');
 
     /** Stripe Routes */
-    // Route::get('payment/stripe', [PaymentController::class, 'payWithStripe'])->name('payment.stripe');
-    // Route::get('payment/stripe/success', [PaymentController::class, 'stripeSuccess'])->name('payment.stripe.success');
-    // Route::get('payment/stripe/cancel', [PaymentController::class, 'stripeCanceled'])->name('payment.stripe.cancel');
+    Route::get('payment/stripe', [PaymentController::class, 'payWithStripe'])->name('payment.stripe');
+    Route::get('payment/stripe/success', [PaymentController::class, 'stripeSuccess'])->name('payment.stripe.success');
+    Route::get('payment/stripe/cancel', [PaymentController::class, 'stripeCanceled'])->name('payment.stripe.cancel');
     // Route::get('/payment/razorpay/redirect', [PaymentController::class, 'razorpayRedirect'])->name('payment.razorpay.redirect');
     // Route::get('payment/razorpay', [PaymentController::class, 'payWithRazorpay'])->name('payment.razorpay');
     // Route::get('payment/razorpay/success', [PaymentController::class, 'razorpaySuccess'])->name('payment.razorpay.success');
