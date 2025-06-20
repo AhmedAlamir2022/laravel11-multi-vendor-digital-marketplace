@@ -26,7 +26,7 @@
                                     <a href="{{ route('admin.settings.index') }}"
                                         class="list-group-item list-group-item-action d-flex align-items-center">General
                                         Settings</a>
-                                    <a href=""
+                                    <a href="{{ route('admin.settings.commission.index') }}"
                                         class="list-group-item list-group-item-action d-flex align-items-center">Author
                                         Commission Settings</a>
                                     <a href=""

@@ -48,28 +48,28 @@ class SettingController extends Controller implements HasMiddleware
         return redirect()->back();
     }
 
-    // function commissionSetting(): View
-    // {
-    //     return view('admin.setting.pages.commission-setting');
-    // }
+    function commissionSetting(): View
+    {
+        return view('admin.setting.pages.commission-setting');
+    }
 
-    // function updateCommissionSetting(Request $request): RedirectResponse
-    // {
-    //     $validatedData = $request->validate([
-    //         'author_commission' => ['required', 'numeric']
-    //     ]);
+    function updateCommissionSetting(Request $request): RedirectResponse
+    {
+        $validatedData = $request->validate([
+            'author_commission' => ['required', 'numeric']
+        ]);
 
-    //     foreach ($validatedData as $key => $value) {
-    //         Setting::updateOrCreate(
-    //             ['key' => $key],
-    //             ['value' => $value]
-    //         );
-    //     }
-    //     $setting = app()->make(SettingService::class);
-    //     $setting->clearCashedSettings();
-    //     NotificationService::UPDATED();
-    //     return redirect()->back();
-    // }
+        foreach ($validatedData as $key => $value) {
+            Setting::updateOrCreate(
+                ['key' => $key],
+                ['value' => $value]
+            );
+        }
+        $setting = app()->make(SettingService::class);
+        $setting->clearCashedSettings();
+        NotificationService::UPDATED();
+        return redirect()->back();
+    }
 
     // function logoSetting(): View
     // {

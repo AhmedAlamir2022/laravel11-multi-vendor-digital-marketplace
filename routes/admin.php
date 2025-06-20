@@ -89,6 +89,6 @@ Route::middleware('auth:admin')->prefix('admin')->as('admin.')->group(function (
     /** Settings Route */
     Route::get('settings', [SettingController::class, 'index'])->name('settings.index');
     Route::put('general-settings', [SettingController::class, 'updateGeneralSetting'])->name('settings.general.update');
-    // Route::get('commission-settings', [SettingController::class, 'commissionSetting'])->name('settings.commission.index');
-    // Route::put('commission-settings', [SettingController::class, 'updateCommissionSetting'])->name('settings.commission.update');
+    Route::get('commission-settings', [SettingController::class, 'commissionSetting'])->name('settings.commission.index');
+    Route::put('commission-settings', [SettingController::class, 'updateCommissionSetting'])->name('settings.commission.update');
 });

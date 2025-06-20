@@ -56,10 +56,10 @@ class Item extends Model
     //     return $this->hasMany(ItemReview::class)->latest();
     // }
 
-    // function sales() : HasMany
-    // {
-    //     return $this->hasMany(PurchaseItem::class, 'item_id', 'id');
-    // }
+    function sales() : HasMany
+    {
+        return $this->hasMany(PurchaseItem::class, 'item_id', 'id');
+    }
 
     protected $casts = [
         'tags' => 'array',
