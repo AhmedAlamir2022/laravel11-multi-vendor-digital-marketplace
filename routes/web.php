@@ -6,6 +6,7 @@ use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ItemController;
 use App\Http\Controllers\Frontend\KycVerificationController;
+use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\Frontend\PaymentController;
 use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Controllers\Frontend\ProfileController;
@@ -39,6 +40,12 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('add-cart/{id}', [CartItemController::class, 'store'])->name('cart.store');
     Route::delete('add-cart/{id}', [CartItemController::class, 'destroy'])->name('cart.destroy');
 
+    /** Order Routes */
+    Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+    Route::get('/orders/{id}', [OrderController::class, 'show'])->name('orders.show');
+    Route::get('/transactions', [OrderController::class, 'transactions'])->name('transactions.index');
+    Route::get('/sales', [OrderController::class, 'sales'])->name('sales.index');
+
     /** checkout routes */
     Route::get('checkout', CheckoutController::class)->name('checkout.index');
 
@@ -54,9 +61,6 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('payment/stripe', [PaymentController::class, 'payWithStripe'])->name('payment.stripe');
     Route::get('payment/stripe/success', [PaymentController::class, 'stripeSuccess'])->name('payment.stripe.success');
     Route::get('payment/stripe/cancel', [PaymentController::class, 'stripeCanceled'])->name('payment.stripe.cancel');
-    // Route::get('/payment/razorpay/redirect', [PaymentController::class, 'razorpayRedirect'])->name('payment.razorpay.redirect');
-    // Route::get('payment/razorpay', [PaymentController::class, 'payWithRazorpay'])->name('payment.razorpay');
-    // Route::get('payment/razorpay/success', [PaymentController::class, 'razorpaySuccess'])->name('payment.razorpay.success');
 
     /** Author Route Group */
     Route::group(['middleware' => 'is_author'], function () {

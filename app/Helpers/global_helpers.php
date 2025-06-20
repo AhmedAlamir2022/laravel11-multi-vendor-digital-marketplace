@@ -3,6 +3,7 @@
 use App\Models\CartItem;
 use App\Models\Item;
 use App\Models\KycVerification;
+use App\Models\Purchase;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -158,6 +159,13 @@ if(!function_exists('getCartCount')) {
     function getCartCount() : int
     {
         return CartItem::where('user_id', user()->id)->count();
+    }
+}
+
+if(!function_exists('getOrderCount')) {
+    function getOrderCount() : int
+    {
+        return Purchase::count();
     }
 }
 

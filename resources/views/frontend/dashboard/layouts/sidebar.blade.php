@@ -37,7 +37,7 @@
             </li>
             @endif
             <li class="sidebar-list__item">
-                <a href="" class="sidebar-list__link">
+                <a href="{{ route('orders.index') }}" class="sidebar-list__link">
                     <span class="sidebar-list__icon">
                         <i class="ti ti-basket-check"></i>
                     </span>
@@ -46,7 +46,7 @@
             </li>
 
             <li class="sidebar-list__item">
-                <a href="" class="sidebar-list__link">
+                <a href="{{ route('transactions.index') }}" class="sidebar-list__link">
                     <span class="sidebar-list__icon">
                         <i class="ti ti-transaction-dollar"></i>
                     </span>
@@ -55,7 +55,7 @@
             </li>
             @if(isAuthor())
             <li class="sidebar-list__item">
-                <a href="" class="sidebar-list__link">
+                <a href="{{ route('sales.index') }}" class="sidebar-list__link">
                     <span class="sidebar-list__icon">
                         <i class="ti ti-discount"></i>
                     </span>

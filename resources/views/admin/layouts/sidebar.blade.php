@@ -107,7 +107,7 @@
                     </li>
                 @endif
 
-                {{-- @if (canAccess(['manage order']))
+                @if (canAccess(['manage order']))
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle {{ setSidebarActive(['admin.orders.index', 'admin.kyc-settings.index']) == 'active' ? 'show' : '' }}"
                             href="#navbar-layout" data-bs-toggle="dropdown" data-bs-auto-close="false"
@@ -126,14 +126,14 @@
                                     <a class="dropdown-item {{ setSidebarActive(['admin.orders.index']) }}"
                                         href="{{ route('admin.orders.index') }}">
                                         Orders
-                                        <span class="badge badge-sm bg-yellow-lt text-uppercase ms-auto">0</span>
+                                        <span class="badge badge-sm bg-yellow-lt text-uppercase ms-auto">{{ getOrderCount() }}</span>
                                     </a>
 
                                 </div>
                             </div>
                         </div>
                     </li>
-                @endif --}}
+                @endif
 
                 @if (canAccess(['review products']))
                     <li class="nav-item dropdown">
