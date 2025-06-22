@@ -126,7 +126,8 @@
                                     <a class="dropdown-item {{ setSidebarActive(['admin.orders.index']) }}"
                                         href="{{ route('admin.orders.index') }}">
                                         Orders
-                                        <span class="badge badge-sm bg-yellow-lt text-uppercase ms-auto">{{ getOrderCount() }}</span>
+                                        <span
+                                            class="badge badge-sm bg-yellow-lt text-uppercase ms-auto">{{ getOrderCount() }}</span>
                                     </a>
 
                                 </div>
@@ -239,7 +240,7 @@
                     </li>
                 @endif
 
-                {{-- @if (canAccess(['mange withdraw request']))
+                @if (canAccess(['mange withdraw request']))
                     <li class="nav-item">
                         <a class="nav-link {{ setSidebarActive(['admin.withdraw-requests.index']) }}"
                             href="{{ route('admin.withdraw-requests.index') }}">
@@ -252,9 +253,9 @@
                             </span>
                         </a>
                     </li>
-                @endif --}}
+                @endif
 
-                {{-- @if (canAccess(['manage withdraw method']))
+                @if (canAccess(['manage withdraw method']))
                     <li class="nav-item">
                         <a class="nav-link {{ setSidebarActive(['admin.withdrawal-methods.index']) }}"
                             href="{{ route('admin.withdrawal-methods.index') }}">
@@ -267,7 +268,7 @@
                             </span>
                         </a>
                     </li>
-                @endif --}}
+                @endif
 
                 {{-- @if (canAccess(['manage sections']))
                     <li class="nav-item dropdown">

@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -49,13 +50,28 @@ class User extends Authenticatable
         ];
     }
 
-    function kyc() : HasMany
+    function kyc(): HasMany
     {
         return $this->hasMany(KycVerification::class, 'user_id', 'id')->orderBy('created_at', 'desc');
     }
 
-    function products() : HasMany
+    function products(): HasMany
     {
         return $this->hasMany(Item::class, 'author_id', 'id')->where('status', 'approved');
+    }
+
+    function withdrawInfo(): HasOne
+    {
+        return $this->hasOne(AuthorWithdrawInformation::class, 'author_id', 'id');
+    }
+
+    function withdraws(): HasMany
+    {
+        return $this->hasMany(Withdraw::class, 'author_id', 'id');
+    }
+
+    function authorSales(): HasMany
+    {
+        return $this->hasMany(AuthorSale::class, 'author_id', 'id');
     }
 }

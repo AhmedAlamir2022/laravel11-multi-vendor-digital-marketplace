@@ -141,9 +141,9 @@
                                     </div>
                                 </form>
                             </div>
-                            {{-- <div class="tab-pane fade" id="pills-payouts" role="tabpanel"
+                            <div class="tab-pane fade" id="pills-payouts" role="tabpanel"
                                 aria-labelledby="pills-payouts-tab" tabindex="0">
-                                <form action="" autocomplete="off" method="POST">
+                                <form action="{{ route('withdraw.info') }}" autocomplete="off" method="POST">
                                     @csrf
                                     <div class="row">
                                         <x-frontend.input-select name="payout_method" :label="__('Payout Method')" class="select_2 withdraw-method">
@@ -162,7 +162,7 @@
                                         </div>
                                     </div>
                                 </form>
-                            </div> --}}
+                            </div>
                             <div class="tab-pane fade" id="pills-changePassword" role="tabpanel"
                                 aria-labelledby="pills-changePassword-tab" tabindex="0">
                                 <form action="{{ route('password.update') }}" autocomplete="off" method="POST">

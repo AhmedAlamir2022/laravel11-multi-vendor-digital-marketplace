@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\PasswordUpdateRequest;
 use App\Http\Requests\Frontend\ProfileUpdateRequest;
+use App\Models\AuthorWithdrawInformation;
+use App\Models\WithdrawMethod;
 use App\Services\NotificationService;
 use App\Traits\FileUpload;
 use Illuminate\Contracts\View\View;
@@ -19,8 +21,8 @@ class ProfileController extends Controller
     function  index(): View
     {
         $user = Auth::user();
-        // $withdrawMethods = WithdrawMethod::whereStatus(1)->get();
-        return view('frontend.dashboard.profile.index', compact('user'));
+        $withdrawMethods = WithdrawMethod::whereStatus(1)->get();
+        return view('frontend.dashboard.profile.index', compact('user', 'withdrawMethods'));
     }
 
     function update(ProfileUpdateRequest $request): RedirectResponse
@@ -60,13 +62,13 @@ class ProfileController extends Controller
             'information' => ['required']
         ]);
 
-        // AuthorWithdrawInformation::updateOrCreate(
-        //     ['author_id' => user()->id],
-        //     [
-        //         'withdraw_method_id' => $request->payout_method,
-        //         'information' => $request->information
-        //     ]
-        // );
+        AuthorWithdrawInformation::updateOrCreate(
+            ['author_id' => user()->id],
+            [
+                'withdraw_method_id' => $request->payout_method,
+                'information' => $request->information
+            ]
+        );
 
         NotificationService::UPDATED();
         return redirect()->back();
