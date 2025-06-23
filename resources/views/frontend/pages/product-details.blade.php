@@ -3,9 +3,9 @@
 @section('content')
     <!-- ======================== Breadcrumb Two Section Start ===================== -->
     <section class="breadcrumb border-bottom p-0 d-block section-bg position-relative z-index-1"
-        style="background: url({{ asset(config('settings.breadcrumb')) }});">
+        style="background: url({{ asset('assets/frontend/images/thumbs/breadcrumb_bg.jpg') }});">
         <div class="breadcrumb-two">
-            <img src="assets/images/gradients/breadcrumb-gradient-bg.png" alt="" class="bg--gradient">
+            <img src="{{ asset('assets/frontend/images/gradients/breadcrumb-gradient-bg.png') }}" alt="" class="bg--gradient">
             <div class="container container-two">
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
@@ -89,7 +89,7 @@
                                 aria-labelledby="pills-profile-tab" tabindex="0">
                                 <div class="wsus__pro_det_comment">
                                     <h4>Comments All</h4>
-                                    {{-- @forelse($comments as $comment)
+                                    @forelse($comments as $comment)
                                         <div class="wsus__single_comment">
                                             <div class="comment_footer d-flex flex-wrap">
                                                 <div class="img">
@@ -109,11 +109,11 @@
                                         </div>
                                     @empty
                                         <div class="text-center">{{ __('There is no comment') }}</div>
-                                    @endforelse --}}
+                                    @endforelse
                                 </div>
 
                                 <nav aria-label="Page navigation example">
-                                    {{-- {{ $comments->links() }} --}}
+                                    {{ $comments->links() }}
                                 </nav>
                                 @if (auth()->check())
                                     <form action="{{ route('item.comment.store', $product->id) }}"

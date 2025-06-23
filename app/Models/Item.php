@@ -46,10 +46,10 @@ class Item extends Model
         return $this->hasMany(ItemChangelog::class)->latest();
     }
 
-    // function comments() : HasMany
-    // {
-    //     return $this->hasMany(ItemComment::class)->latest();
-    // }
+    function comments() : HasMany
+    {
+        return $this->hasMany(ItemComment::class)->latest();
+    }
 
     // function reviews() : HasMany
     // {
