@@ -1,11 +1,11 @@
-{{-- @php
+@php
     $footerSection = \App\Models\FooterSection::first();
     $socialLinks = \App\Models\SocialLink::all();
-    $customPages = App\Models\CustomPage::where(['status' => 1])
-        ->latest()
-        ->take(5)
-        ->get();
-@endphp --}}
+    // $customPages = App\Models\CustomPage::where(['status' => 1])
+    //     ->latest()
+    //     ->take(5)
+    //     ->get();
+@endphp
 <footer class="footer-section " style="background: url({{ asset('assets/frontend/images/shapes/footer-bg.png') }});">
     <div class="container">
         <div class="subscription pt_55 pb_45"
@@ -34,17 +34,18 @@
             <div class="col-xl-3 col-sm-6">
                 <div class="footer-widget">
                     <div class="footer-widget__logo">
-                        <a href="{{ url('/') }}"> <img src="{{ asset('assets/frontend/images/logo/white-logo.png') }}" alt=""></a>
+                        <a href="{{ url('/') }}"> <img src="{{ asset('assets/frontend/images/logo/white-logo.png') }}"
+                                alt=""></a>
                     </div>
-                    <p class="footer-widget__desc">description </p>
+                    <p class="footer-widget__desc">{{ $footerSection?->description }}</p>
                     <div class="footer-widget__social">
                         <ul class="social-icon-list">
-                            {{-- @foreach ($socialLinks as $socialLink)
+                            @foreach ($socialLinks as $socialLink)
                                 <li class="social-icon-list__item">
                                     <a href="{{ $socialLink->url }}" class="social-icon-list__link flx-center"><i
                                             class="{{ $socialLink->icon }}"></i></a>
                                 </li>
-                            @endforeach --}}
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -55,9 +56,9 @@
                     <ul class="footer-lists">
                         <li class="footer-lists__item"><a href="{{ url('/') }}" class="footer-lists__link">Home</a>
                         </li>
-                        <li class="footer-lists__item"><a href=""
+                        <li class="footer-lists__item"><a href="{{ route('products') }}"
                                 class="footer-lists__link">Products</a></li>
-                        <li class="footer-lists__item"><a href=""
+                        <li class="footer-lists__item"><a href="{{ route('contact') }}"
                                 class="footer-lists__link">Contact
                             </a></li>
                         @if (!Auth::check())
@@ -83,7 +84,7 @@
             <div class="col-xl-4 col-sm-6">
                 <div class="footer_widget_count">
                     <ul>
-                        {{-- @if ($footerSection?->item_sold)
+                        @if ($footerSection?->item_sold)
                             <li>
                                 <h4>{{ $footerSection?->item_sold }}</h4>
                                 <p>{{ __('items sold') }}</p>
@@ -94,10 +95,10 @@
                                 <h4>{{ $footerSection?->community_earnings }}</h4>
                                 <p>{{ __('community earnings') }}</p>
                             </li>
-                        @endif --}}
+                        @endif
                     </ul>
                     <div class="img">
-                        <img src="{{ asset('gateway_image') }}" alt="Payment" class="img-fluid w-100">
+                        <img src="{{ asset($footerSection?->gateway_image) }}" alt="Payment" class="img-fluid w-100">
                     </div>
                 </div>
             </div>
@@ -108,7 +109,7 @@
     <div class="bottom-footer">
         <div class="container container-two">
             <div class="bottom-footer__inner flx-between gap-3 ">
-                <p class="bottom-footer__text font-14 text-center w-100 "> copyright </p>
+                <p class="bottom-footer__text font-14 text-center w-100 "> {{ $footerSection?->copyright }}</p>
             </div>
         </div>
     </div>

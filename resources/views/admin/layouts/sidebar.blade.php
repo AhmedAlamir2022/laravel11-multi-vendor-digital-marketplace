@@ -361,12 +361,12 @@
                                     </a>
                                 </div>
 
-                                {{-- <div class="dropdown-menu-column">
+                                <div class="dropdown-menu-column">
                                     <a class="dropdown-item {{ setSidebarActive(['admin.footer-section.index']) }}"
                                         href="{{ route('admin.footer-section.index') }}">
                                         {{ __('Footer Section') }}
                                     </a>
-                                </div> --}}
+                                </div>
                                 {{-- <div class="dropdown-menu-column">
                                     <a class="dropdown-item {{ setSidebarActive(['admin.contact-section.index']) }}"
                                         href="{{ route('admin.contact-section.index') }}">
@@ -378,7 +378,7 @@
                     </li>
                 @endif
 
-                {{-- @if (canAccess(['manage socials']))
+                @if (canAccess(['manage socials']))
                     <li class="nav-item">
                         <a class="nav-link {{ setSidebarActive(['admin.social-links.index']) }}"
                             href="{{ route('admin.social-links.index') }}">
@@ -391,7 +391,7 @@
                             </span>
                         </a>
                     </li>
-                @endif --}}
+                @endif
 
                 {{-- @if (canAccess(['manage banner']))
                     <li class="nav-item">
