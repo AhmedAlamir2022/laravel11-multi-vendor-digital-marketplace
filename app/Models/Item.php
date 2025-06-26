@@ -51,10 +51,10 @@ class Item extends Model
         return $this->hasMany(ItemComment::class)->latest();
     }
 
-    // function reviews() : HasMany
-    // {
-    //     return $this->hasMany(ItemReview::class)->latest();
-    // }
+    function reviews() : HasMany
+    {
+        return $this->hasMany(ItemReview::class)->latest();
+    }
 
     function sales() : HasMany
     {

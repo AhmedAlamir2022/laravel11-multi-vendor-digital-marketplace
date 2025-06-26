@@ -73,7 +73,7 @@
             @endif
 
             <li class="sidebar-list__item">
-                <a href="" class="sidebar-list__link">
+                <a href="{{ route('reviews.index') }}" class="sidebar-list__link">
                     <span class="sidebar-list__icon">
                         <i class="ti ti-stars"></i>
                     </span>

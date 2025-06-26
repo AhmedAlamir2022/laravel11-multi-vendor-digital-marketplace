@@ -27,6 +27,9 @@
                         <th class="price">
                             Status
                         </th>
+                        <th class="date">
+                            Date
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,8 +39,8 @@
                             <td>{{ $transaction->payment_id }}</td>
                             <td>{{ $transaction->payment_gateway }}</td>
                             <td>{{ $transaction->paid_in_amount }} {{ $transaction->paid_in_currency_icon }}</td>
-
                             <td><span class="badge bg-success text-white">{{ $transaction->status }}</span></td>
+                            <td>{{ formatDate($transaction->created_at) }}</td>
                         </tr>
                     @empty
                         <tr>

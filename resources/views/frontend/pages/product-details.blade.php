@@ -73,7 +73,7 @@
                                 <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
                                     data-bs-target="#pills-contact" type="button" role="tab"
                                     aria-controls="pills-contact" aria-selected="false"><i class="far fa-star"></i>
-                                    Review</button>
+                                    Reviews ({{ $product->reviews_count }})</button>
                             </li>
                         </ul>
                         <div class="tab-content" id="pills-tabContent">
@@ -145,9 +145,9 @@
                             <div class="tab-pane fade" id="pills-contact" role="tabpanel"
                                 aria-labelledby="pills-contact-tab" tabindex="0">
                                 <div class="wsus__pro_det_review">
-                                    <h3>Reviews</h3>
+                                    <h3>Reviews </h3>
 
-                                    {{-- @forelse($reviews as $review)
+                                    @forelse($reviews as $review)
                                         <div class="wsus__single_comment">
                                             <div class="comment_footer d-flex flex-wrap">
                                                 <div class="img">
@@ -172,12 +172,12 @@
                                         </div>
                                     @empty
                                         <div class="text-center">{{ __('There is no review') }}</div>
-                                    @endforelse --}}
+                                    @endforelse
                                 </div>
 
                                 <nav aria-label="Page navigation example">
 
-                                    {{-- {{ $reviews->links() }} --}}
+                                    {{ $reviews->links() }}
                                 </nav>
 
                                 @if (auth()->check())
