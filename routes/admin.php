@@ -3,11 +3,18 @@
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\Auth\NewPasswordController;
 use App\Http\Controllers\Admin\Auth\PasswordResetLinkController;
+use App\Http\Controllers\Admin\BannerSectionController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CounterSectionController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\FeaturedAuthorSectionController;
+use App\Http\Controllers\Admin\FeaturedCategoryController;
+use App\Http\Controllers\Admin\HeroSectionController;
+use App\Http\Controllers\Admin\HighlightedProductController;
 use App\Http\Controllers\Admin\ItemReviewController;
 use App\Http\Controllers\Admin\KycController;
 use App\Http\Controllers\Admin\KYCSettingController;
+use App\Http\Controllers\Admin\MonthlyPickProductsController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PaymentSettingController;
 use App\Http\Controllers\Admin\ProfileController;
@@ -92,6 +99,22 @@ Route::middleware('auth:admin')->prefix('admin')->as('admin.')->group(function (
     Route::get('withdraw-requests/{id}/show', [WithdrawRequestController::class, 'show'])->name('withdraw-requests.show');
     Route::put('withdraw-requests', [WithdrawRequestController::class, 'update'])->name('withdraw-requests.update');
     Route::put('withdraw-requests/{id}/status', [WithdrawRequestController::class, 'updateStatus'])->name('withdraw-requests-status.update');
+
+        /** Section Routes */
+    Route::get('ajax/product-search', [HeroSectionController::class, 'productSearch'])->name('ajax.product-search');
+    Route::resource('hero-section', HeroSectionController::class);
+    Route::resource('featured-categories-section', FeaturedCategoryController::class);
+    Route::resource('highlighted-products-section', HighlightedProductController::class);
+    Route::resource('monthly-picked-products-section', MonthlyPickProductsController::class);
+    Route::resource('featured-author-section', FeaturedAuthorSectionController::class);
+    Route::resource('counter-section', CounterSectionController::class);
+    // Route::resource('footer-section', FooterSectionController::class);
+    // Route::resource('contact-section', ContactInfoSectionController::class);
+
+    /** Banner Routes */
+    Route::put('banner-one-update', [BannerSectionController::class, 'updateBannerOne'])->name('banner-one.update');
+    Route::put('banner-two-update', [BannerSectionController::class, 'updateBannerTwo'])->name('banner-two.update');
+    Route::resource('banner-section', BannerSectionController::class);
 
 
     /** Payment Settings Routes */

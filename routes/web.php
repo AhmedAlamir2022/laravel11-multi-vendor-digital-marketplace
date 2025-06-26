@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/products', [ProductController::class, 'index'])->name('products');
 Route::get('/products/{slug}', [ProductController::class, 'show'])->name('products.show');
+Route::get('/highlighted-products', [HomeController::class, 'highlightedProducts'])->name('highlighted.products');
 
 /** Item Comment Route */
 Route::post('/item/{id}/comment', [ItemCommentController::class, 'store'])->name('item.comment.store');

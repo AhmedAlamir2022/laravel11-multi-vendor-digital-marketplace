@@ -270,7 +270,7 @@
                     </li>
                 @endif
 
-                {{-- @if (canAccess(['manage sections']))
+                @if (canAccess(['manage sections']))
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle {{ setSidebarActive([
                             'admin.hero-section.index',
@@ -361,22 +361,22 @@
                                     </a>
                                 </div>
 
-                                <div class="dropdown-menu-column">
+                                {{-- <div class="dropdown-menu-column">
                                     <a class="dropdown-item {{ setSidebarActive(['admin.footer-section.index']) }}"
                                         href="{{ route('admin.footer-section.index') }}">
                                         {{ __('Footer Section') }}
                                     </a>
-                                </div>
-                                <div class="dropdown-menu-column">
+                                </div> --}}
+                                {{-- <div class="dropdown-menu-column">
                                     <a class="dropdown-item {{ setSidebarActive(['admin.contact-section.index']) }}"
                                         href="{{ route('admin.contact-section.index') }}">
                                         {{ __('Contact Section') }}
                                     </a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </li>
-                @endif --}}
+                @endif
 
                 {{-- @if (canAccess(['manage socials']))
                     <li class="nav-item">

@@ -7,7 +7,7 @@
                 More</a>
         </div>
         <div class="row justify-content-center">
-            {{-- @forelse($featuredCategories as $category)
+            @forelse($featuredCategories as $category)
             <div class="col-auto">
                 <a href="{{ route('products', ['category' => $category->slug]) }}" class="popular-item w-100">
                     <span class="popular-item__icon">
@@ -19,7 +19,7 @@
             </div>
             @empty
             <div class="text-center">{{ __('No Category Found') }}</div>
-            @endforelse --}}
+            @endforelse
         </div>
     </div>
 </section>
