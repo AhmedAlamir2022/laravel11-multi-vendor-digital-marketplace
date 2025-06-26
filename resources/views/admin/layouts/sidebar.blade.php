@@ -423,7 +423,7 @@
                     </li>
                 @endif --}}
 
-                {{-- @if (canAccess(['manage newsletter']))
+                @if (canAccess(['manage newsletter']))
                     <li class="nav-item">
                         <a class="nav-link {{ setSidebarActive(['admin.subscribers.index']) }}"
                             href="{{ route('admin.subscribers.index') }}">
@@ -436,7 +436,7 @@
                             </span>
                         </a>
                     </li>
-                @endif --}}
+                @endif
 
                 @if (canAccess(['access management']))
                     <li class="nav-item dropdown">

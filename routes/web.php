@@ -9,6 +9,7 @@ use App\Http\Controllers\Frontend\ItemCommentController;
 use App\Http\Controllers\Frontend\ItemController;
 use App\Http\Controllers\Frontend\ItemReviewController;
 use App\Http\Controllers\Frontend\KycVerificationController;
+use App\Http\Controllers\Frontend\NewsLetterController;
 use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\Frontend\PaymentController;
 use App\Http\Controllers\Frontend\ProductController;
@@ -19,6 +20,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/products', [ProductController::class, 'index'])->name('products');
 Route::get('/products/{slug}', [ProductController::class, 'show'])->name('products.show');
 Route::get('/highlighted-products', [HomeController::class, 'highlightedProducts'])->name('highlighted.products');
+Route::post('/newsletter', NewsLetterController::class)->name('newsletter.store');
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 
 /** Item Comment Route */

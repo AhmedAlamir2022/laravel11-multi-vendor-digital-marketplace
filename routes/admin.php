@@ -24,6 +24,7 @@ use App\Http\Controllers\Admin\RoleUserController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SocialLinkController;
 use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\Admin\SubscribersController;
 use App\Http\Controllers\Admin\WithdrawMethodController;
 use App\Http\Controllers\Admin\WithdrawRequestController;
 use Illuminate\Support\Facades\Route;
@@ -115,6 +116,11 @@ Route::middleware('auth:admin')->prefix('admin')->as('admin.')->group(function (
 
     /** Social links route */
     Route::resource('social-links', SocialLinkController::class);
+
+    /** Subscribers routes */
+    Route::get('subscribers', [SubscribersController::class, 'index'])->name('subscribers.index');
+    Route::delete('subscribers/{subscriber}', [SubscribersController::class, 'destroy'])->name('subscribers.destroy');
+    Route::post('send-newsletter', [SubscribersController::class, 'sendNewsletter'])->name('send-newsletter');
 
     /** Banner Routes */
     Route::put('banner-one-update', [BannerSectionController::class, 'updateBannerOne'])->name('banner-one.update');
