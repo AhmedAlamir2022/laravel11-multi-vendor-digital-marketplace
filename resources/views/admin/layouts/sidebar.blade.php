@@ -367,12 +367,12 @@
                                         {{ __('Footer Section') }}
                                     </a>
                                 </div>
-                                {{-- <div class="dropdown-menu-column">
+                                <div class="dropdown-menu-column">
                                     <a class="dropdown-item {{ setSidebarActive(['admin.contact-section.index']) }}"
                                         href="{{ route('admin.contact-section.index') }}">
                                         {{ __('Contact Section') }}
                                     </a>
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                     </li>

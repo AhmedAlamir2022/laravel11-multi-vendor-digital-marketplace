@@ -3,6 +3,7 @@
 use App\Http\Controllers\Frontend\AuthorWithdrawController;
 use App\Http\Controllers\Frontend\CartItemController;
 use App\Http\Controllers\Frontend\CheckoutController;
+use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ItemCommentController;
@@ -22,6 +23,7 @@ Route::get('/products/{slug}', [ProductController::class, 'show'])->name('produc
 Route::get('/highlighted-products', [HomeController::class, 'highlightedProducts'])->name('highlighted.products');
 Route::post('/newsletter', NewsLetterController::class)->name('newsletter.store');
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
+Route::post('contact', [ContactController::class, 'sendMail'])->name('contact.send-mail');
 
 /** Item Comment Route */
 Route::post('/item/{id}/comment', [ItemCommentController::class, 'store'])->name('item.comment.store');

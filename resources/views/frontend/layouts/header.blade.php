@@ -51,7 +51,7 @@
                             <a href="{{ route('products') }}" class="nav-menu__link">Products</a>
                         </li>
                         <li class="nav-menu__item">
-                            <a href="" class="nav-menu__link">Contact</a>
+                            <a href="{{ route('contact') }}" class="nav-menu__link">Contact</a>
                         </li>
                         {{-- @foreach($customPages as $page)
                         <li class="nav-menu__item">

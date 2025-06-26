@@ -24,14 +24,14 @@ class MailSenderService
         Mail::to($emails)->send(new NewsletterMail(mailSubject: $subject, content: $content));
     }
 
-    // public static function sendContactMail(string $name, string $subject, string $content, string $formMail, string $toMail)
-    // {
-    //     Mail::send(new ContactMail(
-    //         name: $name,
-    //         mailSubject: $subject,
-    //         content: $content,
-    //         formMail: $formMail,
-    //         toMail: $toMail
-    //     ));
-    // }
+    public static function sendContactMail(string $name, string $subject, string $content, string $formMail, string $toMail)
+    {
+        Mail::send(new ContactMail(
+            name: $name,
+            mailSubject: $subject,
+            content: $content,
+            formMail: $formMail,
+            toMail: $toMail
+        ));
+    }
 }
