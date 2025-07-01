@@ -393,7 +393,7 @@
                     </li>
                 @endif
 
-                {{-- @if (canAccess(['manage banner']))
+                @if (canAccess(['manage banner']))
                     <li class="nav-item">
                         <a class="nav-link {{ setSidebarActive(['admin.banner.index']) }}"
                             href="{{ route('admin.banner.index') }}">
@@ -406,9 +406,9 @@
                             </span>
                         </a>
                     </li>
-                @endif --}}
+                @endif
 
-                {{-- @if (canAccess(['page builder']))
+                @if (canAccess(['page builder']))
                     <li class="nav-item">
                         <a class="nav-link {{ setSidebarActive(['admin.custom-page.index']) }}"
                             href="{{ route('admin.custom-page.index') }}">
@@ -421,7 +421,7 @@
                             </span>
                         </a>
                     </li>
-                @endif --}}
+                @endif
 
                 @if (canAccess(['manage newsletter']))
                     <li class="nav-item">

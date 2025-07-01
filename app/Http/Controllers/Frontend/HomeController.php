@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\BannerSection;
 use App\Models\Category;
 use App\Models\CounterSection;
+use App\Models\CustomPage;
 use App\Models\FeaturedAuthorSection;
 use App\Models\FeaturedCategory;
 use App\Models\HeroSection;
@@ -91,5 +92,11 @@ class HomeController extends Controller
             ->whereIn('id', $highlightedProductSection->item_ids)
             ->paginate(12);
         return view('frontend.pages.highlighted-product', compact('highlightedProducts'));
+    }
+
+    function page(string $slug) : View
+    {
+        $page = CustomPage::where('slug', $slug)->first();
+        return view('frontend.pages.custom-page', compact('page'));
     }
 }

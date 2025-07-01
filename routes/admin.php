@@ -7,9 +7,11 @@ use App\Http\Controllers\Admin\BannerSectionController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ContactInfoSectionController;
 use App\Http\Controllers\Admin\CounterSectionController;
+use App\Http\Controllers\Admin\CustomPageController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FeaturedAuthorSectionController;
 use App\Http\Controllers\Admin\FeaturedCategoryController;
+use App\Http\Controllers\Admin\FlashSaleBannerController;
 use App\Http\Controllers\Admin\FooterSectionController;
 use App\Http\Controllers\Admin\HeroSectionController;
 use App\Http\Controllers\Admin\HighlightedProductController;
@@ -117,6 +119,12 @@ Route::middleware('auth:admin')->prefix('admin')->as('admin.')->group(function (
 
     /** Social links route */
     Route::resource('social-links', SocialLinkController::class);
+
+    /** Flash Sale Banner  */
+    Route::resource('banner', FlashSaleBannerController::class);
+
+    /** Custom Page Routes  */
+    Route::resource('custom-page', CustomPageController::class);
 
     /** Subscribers routes */
     Route::get('subscribers', [SubscribersController::class, 'index'])->name('subscribers.index');

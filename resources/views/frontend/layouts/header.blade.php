@@ -2,11 +2,11 @@
     @php
         $categories = App\Models\Category::with('subCategories')->where('show_at_nav', 1)->get();
         $cartCount = App\Models\CartItem::where('user_id', user()?->id)->count();
-        // $banner = App\Models\FlashSaleBanner::first();
-        // $customPages = App\Models\CustomPage::where(['status' => 1, 'show_at_nav' => 1])->get();
+        $banner = App\Models\FlashSaleBanner::first();
+        $customPages = App\Models\CustomPage::where(['status' => 1, 'show_at_nav' => 1])->get();
     @endphp
     <!-- ============================ Sale Offer Start =========================== -->
-    {{-- @if($banner?->status == 1)
+    @if($banner?->status == 1)
     <div class="sale-offer ">
         <div class="container container-full ">
             <div class="sale-offer__content flx-between position-relative">
@@ -26,7 +26,7 @@
             </div>
         </div>
     </div>
-    @endif --}}
+    @endif
     <!-- ============================ Sale Offer End =========================== -->
 
     <!-- ==================== Header Start Here ==================== -->
@@ -53,11 +53,11 @@
                         <li class="nav-menu__item">
                             <a href="{{ route('contact') }}" class="nav-menu__link">Contact</a>
                         </li>
-                        {{-- @foreach($customPages as $page)
+                        @foreach($customPages as $page)
                         <li class="nav-menu__item">
                             <a href="{{ route('page', $page->slug) }}" class="nav-menu__link">{{ $page->name }}</a>
                         </li>
-                        @endforeach--}}
+                        @endforeach
                         <li class="nav-menu__item">
                             <a href="{{ route('kyc.index') }}" class="nav-menu__link">Start Selling</a>
                         </li>

@@ -1,10 +1,10 @@
 @php
     $footerSection = \App\Models\FooterSection::first();
     $socialLinks = \App\Models\SocialLink::all();
-    // $customPages = App\Models\CustomPage::where(['status' => 1])
-    //     ->latest()
-    //     ->take(5)
-    //     ->get();
+    $customPages = App\Models\CustomPage::where(['status' => 1])
+        ->latest()
+        ->take(5)
+        ->get();
 @endphp
 <footer class="footer-section " style="background: url({{ asset('assets/frontend/images/shapes/footer-bg.png') }});">
     <div class="container">
@@ -74,10 +74,10 @@
                 <div class="footer-widget">
                     <h5 class="footer-widget__title text-white">Quick Links</h5>
                     <ul class="footer-lists">
-                        {{-- @foreach ($customPages as $page)
+                        @foreach ($customPages as $page)
                             <li class="footer-lists__item"><a href="dashboard.html"
                                     class="footer-lists__link">{{ $page->name }}</a></li>
-                        @endforeach --}}
+                        @endforeach
                     </ul>
                 </div>
             </div>
