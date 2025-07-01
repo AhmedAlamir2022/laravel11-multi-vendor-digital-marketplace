@@ -30,7 +30,7 @@ class DefaultMail extends Mailable
     {
         return new Envelope(
             subject: $this->mailSubject,
-            from: 'admin@localhost.com',
+            from: config('settings.smtp_sender_email'),
             to: $this->toMail,
         );
     }

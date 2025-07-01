@@ -34,7 +34,7 @@ class ContactMail extends Mailable
         return new Envelope(
             subject: $this->mailSubject,
             from: $this->formMail,
-            to: $this->toMail
+            to: config('settings.smtp_recipient_email')
         );
     }
 

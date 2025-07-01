@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    {{-- <script>
+        const newsletterStoreUrl = "{{ route('newsletter.store') }}";
+    </script> --}}
     <!-- Title -->
     <title>{{ config('settings.site_name') }}</title>
     <!-- Favicon -->
@@ -109,9 +112,9 @@
                         $customPages = App\Models\CustomPage::where(['status' => 1, 'show_at_nav' => 1])->get();
                     @endphp
                     @foreach ($customPages as $page)
-                    <li class="nav-menu__item">
-                        <a href="{{ route('page', $page->slug) }}" class="nav-menu__link">{{ $page->name }}</a>
-                    </li>
+                        <li class="nav-menu__item">
+                            <a href="{{ route('page', $page->slug) }}" class="nav-menu__link">{{ $page->name }}</a>
+                        </li>
                     @endforeach
                     <li class="nav-menu__item">
                         <a href="" class="nav-menu__link">Start Selling</a>

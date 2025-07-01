@@ -18,13 +18,14 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
                     <div class="subscription_right">
-                        <form action="#" class="subscription_form" method="POST">
+                        <form action="{{ route('newsletter.store') }}" class="subscription_form" method="POST">
                             @csrf
                             <input type="text" placeholder="enter your mail" name="email">
                             <button class="btn btn-main btn-lg subscribe-btn"
                                 type="submit">{{ __('Subscribe') }}</button>
                         </form>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -128,7 +129,7 @@
                 let formData = $(this).serialize();
                 $.ajax({
                     method: 'POST',
-                    url: route('newsletter.store'),
+                    url: '/newsletter',
                     data: formData,
                     beforeSend: function() {
                         $('.subscribe-btn').text('Loading...');
@@ -150,5 +151,6 @@
                 })
             })
         });
+
     </script>
 @endpush
