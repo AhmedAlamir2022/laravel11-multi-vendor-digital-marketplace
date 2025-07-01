@@ -29,10 +29,10 @@
                                     <a href="{{ route('admin.settings.commission.index') }}"
                                         class="list-group-item list-group-item-action d-flex align-items-center">Author
                                         Commission Settings</a>
-                                    <a href=""
+                                    <a href="{{ route('admin.settings.logo.index') }}"
                                         class="list-group-item list-group-item-action d-flex align-items-center">Logo
                                         Settings</a>
-                                    <a href=""
+                                    <a href="{{ route('admin.settings.smtp.index') }}"
                                         class="list-group-item list-group-item-action d-flex align-items-center">SMTP
                                         Settings</a>
                                 </div>

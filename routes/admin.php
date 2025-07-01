@@ -150,4 +150,10 @@ Route::middleware('auth:admin')->prefix('admin')->as('admin.')->group(function (
     Route::put('general-settings', [SettingController::class, 'updateGeneralSetting'])->name('settings.general.update');
     Route::get('commission-settings', [SettingController::class, 'commissionSetting'])->name('settings.commission.index');
     Route::put('commission-settings', [SettingController::class, 'updateCommissionSetting'])->name('settings.commission.update');
+
+    Route::get('logo-settings', [SettingController::class, 'logoSetting'])->name('settings.logo.index');
+    Route::put('logo-settings', [SettingController::class, 'updateLogoSetting'])->name('settings.logo.update');
+
+    Route::get('smtp-settings', [SettingController::class, 'smtpSetting'])->name('settings.smtp.index');
+    Route::put('smtp-settings', [SettingController::class, 'updateSmtpSetting'])->name('settings.smtp.update');
 });

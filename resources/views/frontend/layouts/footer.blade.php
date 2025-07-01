@@ -34,7 +34,7 @@
             <div class="col-xl-3 col-sm-6">
                 <div class="footer-widget">
                     <div class="footer-widget__logo">
-                        <a href="{{ url('/') }}"> <img src="{{ asset('assets/frontend/images/logo/white-logo.png') }}"
+                        <a href="{{ url('/') }}"> <img src="{{ asset(config('settings.footer_logo')) }}"
                                 alt=""></a>
                     </div>
                     <p class="footer-widget__desc">{{ $footerSection?->description }}</p>

@@ -36,7 +36,7 @@
                 <!-- Logo Start -->
                 <div class="logo">
                     <a href="{{ url('/') }}" class="link white-version">
-                        <img src="{{ asset('assets/frontend/images/logo/logo-two.png') }}" alt="Logo">
+                        <img src="{{ asset(config('settings.logo')) }}" alt="Logo">
                     </a>
                 </div>
                 <!-- Logo End  -->

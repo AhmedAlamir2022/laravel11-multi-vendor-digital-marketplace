@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Title -->
-    <title>Multi-Vendor Digital Mart</title>
+    <title>{{ config('settings.site_name') }}</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/frontend/images/logo/favicon-two.png') }}">
+    <link rel="shortcut icon" href="{{ asset(config('settings.favicon')) }}">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.min.css') }}">
@@ -105,21 +105,19 @@
                     <li class="nav-menu__item">
                         <a href="" class="nav-menu__link">Contact</a>
                     </li>
-                    {{-- @php
+                    @php
                         $customPages = App\Models\CustomPage::where(['status' => 1, 'show_at_nav' => 1])->get();
                     @endphp
                     @foreach ($customPages as $page)
                     <li class="nav-menu__item">
                         <a href="{{ route('page', $page->slug) }}" class="nav-menu__link">{{ $page->name }}</a>
                     </li>
-                    @endforeach --}}
+                    @endforeach
                     <li class="nav-menu__item">
                         <a href="" class="nav-menu__link">Start Selling</a>
                     </li>
 
-                    {{-- <li class="nav-menu__item">
-                        <a href="contact.html" class="nav-menu__link">Contact</a>
-                    </li> --}}
+
                 </ul>
             </div>
         </div>
@@ -257,7 +255,7 @@
     @stack('scripts')
 
     <!-- CountDown -->
-    {{-- <script src="{{ asset('assets/frontend/js/countdown.js') }}"></script> --}}
+    <script src="{{ asset('assets/frontend/js/countdown.js') }}"></script>
 
 </body>
 
