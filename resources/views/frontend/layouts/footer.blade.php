@@ -20,7 +20,7 @@
                     <div class="subscription_right">
                         <form action="{{ route('newsletter.store') }}" class="subscription_form" method="POST">
                             @csrf
-                            <input type="text" placeholder="enter your mail" name="email">
+                            <input type="text" placeholder="enter your mail" name="email" required>
                             <button class="btn btn-main btn-lg subscribe-btn"
                                 type="submit">{{ __('Subscribe') }}</button>
                         </form>

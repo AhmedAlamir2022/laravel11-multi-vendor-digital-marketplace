@@ -24,7 +24,7 @@ class SocialLinkController extends Controller implements HasMiddleware
      */
     public function index(): View
     {
-        $socialLinks = SocialLink::all();
+        $socialLinks = SocialLink::latest()->paginate(10);
         return view('admin.social-link.index', compact('socialLinks'));
     }
 

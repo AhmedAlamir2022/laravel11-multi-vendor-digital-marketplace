@@ -23,7 +23,7 @@ class WithdrawRequestController extends Controller implements HasMiddleware
     //
     function index() : View
     {
-        $withdrawRequests = Withdraw::paginate(10);
+        $withdrawRequests = Withdraw::latest()->paginate(10);
        return view('admin.withdraw-request.index', compact('withdrawRequests'));
     }
 

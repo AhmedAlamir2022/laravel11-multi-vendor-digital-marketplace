@@ -24,7 +24,7 @@ class SubscribersController extends Controller implements HasMiddleware
 
     function index(): View
     {
-        $subscribers = Subscription::latest()->paginate(25);
+        $subscribers = Subscription::latest()->paginate(5);
         return view('admin.subscriber.index', compact('subscribers'));
     }
 

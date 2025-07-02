@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('admin.roles.update', $role->id) }}" method="POST">
+                        <form id="editRoleForm" action="{{ route('admin.roles.update', $role->id) }}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="col-md-12">
@@ -40,7 +40,7 @@
 
                     </div>
                     <div class="card-footer text-end">
-                        <button type="submit" onclick="$('form').submit();"
+                        <button form="editRoleForm" type="submit" onclick="$('form').submit();"
                             class="btn btn-primary">{{ __('Update') }}</button>
                     </div>
                 </div>

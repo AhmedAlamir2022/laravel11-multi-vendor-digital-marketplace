@@ -26,31 +26,31 @@ class ItemReviewController extends Controller implements HasMiddleware
 
     function pendingIndex(): View
     {
-        $items = Item::where('status', 'pending')->paginate(10);
+        $items = Item::where('status', 'pending')->latest()->paginate(10);
         return view('admin.item-review.pending-index', compact('items'));
     }
 
     function approveIndex(): View
     {
-        $items = Item::where('status', 'approved')->paginate(10);
+        $items = Item::where('status', 'approved')->latest()->paginate(10);
         return view('admin.item-review.approved-index', compact('items'));
     }
 
     function hardRejectedIndex(): View
     {
-        $items = Item::where('status', 'hard_rejected')->paginate(10);
+        $items = Item::where('status', 'hard_rejected')->latest()->paginate(10);
         return view('admin.item-review.hard-rejected-index', compact('items'));
     }
 
     function softRejectedIndex(): View
     {
-        $items = Item::where('status', 'soft_rejected')->paginate(10);
+        $items = Item::where('status', 'soft_rejected')->latest()->paginate(10);
         return view('admin.item-review.soft-rejected-index', compact('items'));
     }
 
     function resubmittedIndex(): View
     {
-        $items = Item::where('status', 'resubmitted')->paginate(10);
+        $items = Item::where('status', 'resubmitted')->latest()->paginate(10);
         return view('admin.item-review.resubmitted-index', compact('items'));
     }
 

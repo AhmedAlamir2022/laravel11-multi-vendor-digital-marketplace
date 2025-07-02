@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('admin.roles.store') }}" method="POST">
+                        <form action="{{ route('admin.roles.store') }}" method="POST" id="createRoleForm">
                             @csrf
                             <div class="col-md-12">
                                 <x-admin.input-text name="role" :label="__('Role Name')" />
@@ -39,7 +39,7 @@
 
                     </div>
                     <div class="card-footer text-end">
-                        <button type="submit" onclick="$('form').submit();"
+                        <button form="createRoleForm" type="submit" onclick="$('form').submit();"
                             class="btn btn-primary">{{ __('Create') }}</button>
                     </div>
                 </div>

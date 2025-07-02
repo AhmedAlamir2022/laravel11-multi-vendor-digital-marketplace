@@ -31,7 +31,7 @@ class RoleController extends Controller implements HasMiddleware
      */
     public function index(): View
     {
-        $roles = Role::withCount('permissions')->get();
+        $roles = Role::withCount('permissions')->latest()->paginate(10);
         return view('admin.access-management.role.index', compact('roles'));
     }
 
@@ -49,7 +49,7 @@ class RoleController extends Controller implements HasMiddleware
      */
     public function store(RoleStoreRequest $request): RedirectResponse
     {
-        dd($request->all());
+        // dd($request->all());
         $role = Role::create([
             'name' => $request->role,
             'guard_name' => 'admin'

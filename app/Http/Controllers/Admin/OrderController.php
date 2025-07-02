@@ -20,7 +20,7 @@ class OrderController extends Controller implements HasMiddleware
 
     function index() : View
     {
-        $orders = Purchase::with(['user:id,name', 'transaction', 'purchaseItems'])->paginate(10);
+        $orders = Purchase::with(['user:id,name', 'transaction', 'purchaseItems'])->latest()->paginate(10);
         return view('admin.order.index', compact('orders'));
     }
 

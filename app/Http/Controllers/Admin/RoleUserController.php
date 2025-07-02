@@ -28,7 +28,7 @@ class RoleUserController extends Controller implements HasMiddleware
      */
     public function index(): View
     {
-        $admins = Admin::all();
+        $admins = Admin::latest()->paginate(10);
         return view('admin.access-management.role-user.index', compact('admins'));
     }
 

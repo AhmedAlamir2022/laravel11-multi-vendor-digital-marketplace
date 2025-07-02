@@ -81,7 +81,7 @@
                                         </td>
 
                                         <td class="text-end">{{ config('settings.currency_icon') }}
-                                            {{ $item->item->discount_price }}</td>
+                                            {{ $item->item->price }}</td>
                                     </tr>
                                 @endforeach
 

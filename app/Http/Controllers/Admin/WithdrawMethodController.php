@@ -25,7 +25,7 @@ class WithdrawMethodController extends Controller implements HasMiddleware
      */
     public function index() : View
     {
-        $methods = WithdrawMethod::all();
+        $methods = WithdrawMethod::latest()->paginate(10);
         return view('admin.withdraw-method.index', compact('methods'));
     }
 

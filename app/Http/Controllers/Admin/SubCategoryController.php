@@ -28,7 +28,7 @@ class SubCategoryController extends Controller implements HasMiddleware
      */
     public function index(): View
     {
-        $subCategories = SubCategory::paginate(10);
+        $subCategories = SubCategory::latest()->paginate(10);
         return view('admin.category.sub-category.index', compact('subCategories'));
     }
 
