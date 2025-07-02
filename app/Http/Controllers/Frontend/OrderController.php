@@ -13,7 +13,7 @@ class OrderController extends Controller
 {
     function index() : View
     {
-        $purchases = PurchaseItem::where('user_id', user()->id)->paginate(10);
+        $purchases = PurchaseItem::where('user_id', user()->id)->latest()->paginate(10);
         return view('frontend.dashboard.order.index', compact('purchases'));
     }
 

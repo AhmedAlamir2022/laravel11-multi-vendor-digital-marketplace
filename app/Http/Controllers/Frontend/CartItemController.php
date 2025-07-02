@@ -18,7 +18,7 @@ class CartItemController extends Controller
      */
     public function index(): View
     {
-        $cartItems = CartItem::with('item.category', 'item.subCategory')->where('user_id', user()->id)->get();
+        $cartItems = CartItem::with('item.category', 'item.subCategory')->where('user_id', user()->id)->latest();
         return view('frontend.pages.cart', compact('cartItems'));
     }
 

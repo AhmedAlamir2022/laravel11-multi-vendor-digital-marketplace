@@ -1,18 +1,18 @@
 @extends('frontend.dashboard.layouts.master')
 
 @section('content')
-    @if(user()->kyc_status == 0 && user()->kyc->first()?->status == 'pending')
-    <div class="alert alert-important alert-warning alert-dismissible" role="alert">
-        <div class="d-flex">
-            <div class="me-2">
-                <i class="ti ti-alert-square-rounded"></i>
+    @if (user()->kyc_status == 0 && user()->kyc->first()?->status == 'pending')
+        <div class="alert alert-important alert-warning alert-dismissible" role="alert">
+            <div class="d-flex">
+                <div class="me-2">
+                    <i class="ti ti-alert-square-rounded"></i>
+                </div>
+                <div>
+                    {{ __('Your KYC Request is Pending. You will get Notify when it will be approved') }}
+                </div>
             </div>
-            <div>
-                {{ __('Your KYC Request is Pending. You will get Notify when it will be approved') }}
-            </div>
+            <a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>
         </div>
-        <a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>
-    </div>
     @endif
 
     <!-- welcome balance Content Start -->
@@ -32,33 +32,33 @@
         <!-- dashboard body Item Start -->
         <div class="dashboard-body__item">
             <div class="row gy-4">
-                @if(isAuthor())
-                <div class="col-xl-3 col-sm-6">
-                    <div class="dashboard-widget red">
-                        <span class="dashboard-widget__icon">
-                            <i class="ti ti-basket-check"></i>
-                        </span>
-                        <div class="dashboard-widget__content flx-between gap-1 align-items-end">
-                            <div>
-                                <h4 class="dashboard-widget__number mb-1 mt-3">44</h4>
-                                <span class="dashboard-widget__text font-14">44</span>
+                @if (isAuthor())
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="dashboard-widget red">
+                            <span class="dashboard-widget__icon">
+                                <i class="ti ti-basket-check"></i>
+                            </span>
+                            <div class="dashboard-widget__content flx-between gap-1 align-items-end">
+                                <div>
+                                    <h4 class="dashboard-widget__number mb-1 mt-3">{{ $totalItems }}</h4>
+                                    <span class="dashboard-widget__text font-14">Total Items</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-3 col-sm-6">
-                    <div class="dashboard-widget blue">
-                        <span class="dashboard-widget__icon">
-                            <i class="ti ti-currency-dollar"></i>
-                        </span>
-                        <div class="dashboard-widget__content flx-between gap-1 align-items-end">
-                            <div>
-                                <h4 class="dashboard-widget__number mb-1 mt-3">44</h4>
-                                <span class="dashboard-widget__text font-14">Total Sales</span>
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="dashboard-widget blue">
+                            <span class="dashboard-widget__icon">
+                                <i class="ti ti-currency-dollar"></i>
+                            </span>
+                            <div class="dashboard-widget__content flx-between gap-1 align-items-end">
+                                <div>
+                                    <h4 class="dashboard-widget__number mb-1 mt-3">{{ currencyPosition($totalSales) }}</h4>
+                                    <span class="dashboard-widget__text font-14">Total Sales</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endif
                 <div class="col-xl-3 col-sm-6">
                     <div class="dashboard-widget green">
@@ -67,7 +67,7 @@
                         </span>
                         <div class="dashboard-widget__content flx-between gap-1 align-items-end">
                             <div>
-                                <h4 class="dashboard-widget__number mb-1 mt-3">44</h4>
+                                <h4 class="dashboard-widget__number mb-1 mt-3">{{ $purchaseCount }}</h4>
                                 <span class="dashboard-widget__text font-14">Total Purchase</span>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                         </span>
                         <div class="dashboard-widget__content flx-between gap-1 align-items-end">
                             <div>
-                                <h4 class="dashboard-widget__number mb-1 mt-3">44</h4>
+                                <h4 class="dashboard-widget__number mb-1 mt-3">{{ $reviewCount }}</h4>
                                 <span class="dashboard-widget__text font-14">Total Reviews</span>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                         </span>
                         <div class="dashboard-widget__content flx-between gap-1 align-items-end">
                             <div>
-                                <h4 class="dashboard-widget__number mb-1 mt-3">44</h4>
+                                <h4 class="dashboard-widget__number mb-1 mt-3">{{ currencyPosition($totalSpent) }}</h4>
                                 <span class="dashboard-widget__text font-14">Total Spent</span>
                             </div>
                         </div>

@@ -29,7 +29,7 @@ class ItemController extends Controller
     function index(): View
     {
         $categories = Category::all();
-        $items = Item::with(['category', 'subCategory'])->where('author_id', user()->id)->paginate(10);
+        $items = Item::with(['category', 'subCategory'])->where('author_id', user()->id)->latest()->paginate(10);
         return view('frontend.dashboard.item.index', compact('categories', 'items'));
     }
 
