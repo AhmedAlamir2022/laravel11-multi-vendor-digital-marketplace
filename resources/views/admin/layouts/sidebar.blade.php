@@ -499,7 +499,7 @@
                     </li>
                 @endif
 
-                {{-- @if (canAccess(['manage setting']))
+                @if (canAccess(['manage setting']))
                     <li class="nav-item ">
                         <a class="nav-link {{ setSidebarActive(['admin.settings.index']) }}"
                             href="{{ route('admin.wipe-database.index') }}">
@@ -512,7 +512,7 @@
                             </span>
                         </a>
                     </li>
-                @endif --}}
+                @endif
 
             </ul>
         </div>

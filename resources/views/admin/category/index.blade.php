@@ -63,6 +63,14 @@
                                                 <td>
                                                     <a href="{{ route('admin.categories.edit', $category->id) }}"
                                                         class="text-primary"><i class="ti ti-edit"></i></a>
+                                                    {{-- <form action="{{ route('admin.categories.destroy', $category->id) }}"
+                                                        method="POST" style="display:inline;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="delete-item btn btn-link text-danger">
+                                                            <i class="ti ti-trash"></i>
+                                                        </button>
+                                                    </form> --}}
                                                     <a class="delete-item text-danger"
                                                         href="{{ route('admin.categories.destroy', $category->id) }}"><i
                                                             class="ti ti-trash"></i></a>

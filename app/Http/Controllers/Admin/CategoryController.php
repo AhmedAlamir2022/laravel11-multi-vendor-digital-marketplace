@@ -26,7 +26,7 @@ class CategoryController extends Controller implements HasMiddleware
      */
     public function index(): View
     {
-        $categories = Category::paginate(10);
+        $categories = Category::latest()->paginate(10);
         return view('admin.category.index', compact('categories'));
     }
 
@@ -93,7 +93,6 @@ class CategoryController extends Controller implements HasMiddleware
             }
 
             $category->delete();
-
             NotificationService::DELETED();
             return response()->json(['status' => 'success', 'message' => __('Delete successfully')], 200);
         } catch (\Exception $e) {
